@@ -11,7 +11,8 @@ body {
     line-height: 1.4;
     background-color: #fff;
     text-align: center; /* Center align the text for the entire body */
-    margin: 200px; /* Adds a margin around the entire body content */
+    margin: 20px; /* Adds a margin around the entire body content */
+    margin-inline: 100px;
 }
 
 /* Wrapper for content */
