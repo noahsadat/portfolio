@@ -12,7 +12,8 @@ body {
     background-color: #fff;
     text-align: center; /* Center align the text for the entire body */
     margin: 20px; /* Adds a margin around the entire body content */
-    margin-inline: 175px;
+    margin-inline: 20px;
+    
 }
 
 /* Wrapper for content */
