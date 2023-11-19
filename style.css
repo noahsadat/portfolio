@@ -12,7 +12,7 @@ body {
     background-color: #fff;
     text-align: center; /* Center align the text for the entire body */
     margin: 20px; /* Adds a margin around the entire body content */
-    margin-inline: 200px;
+    margin-inline: 175px;
 }
 
 /* Wrapper for content */
@@ -114,3 +114,15 @@ footer a {
 footer a:hover {
     text-decoration: underline;
 }
+
+a{ 
+    color: inherit; 
+  }
+  
+  a:visited{
+    color:inherit;
+  }
+  
+  a:hover{
+    color:inherit;
+  }
