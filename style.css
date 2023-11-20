@@ -71,7 +71,7 @@ p {
 /*breaks */
 hr {
     border-color: #ffffff;
-    
+
 }
 
 /* Lists */
@@ -120,4 +120,58 @@ footer a {
 
 footer a:hover {
     text-decoration: underline;
+}
+
+/* Starry Night Effect */
+body {
+    background-color: black; /* Set the background to pitch black */
+    overflow: hidden; /* Ensures no scrolling */
+}
+
+/* Create stars using pseudo-elements */
+body::before {
+    content: '';
+    position: fixed; /* Fixed position */
+    width: 1px; height: 1px; /* Small star size */
+    border-radius: 50%; /* Make them circular */
+    background: white; /* Star color */
+    box-shadow: 
+      1000px 1000px white,
+      950px 150px white,
+      900px 600px white,
+      800px 800px white,
+      700px 300px white,
+      600px 900px white,
+      500px 500px white,
+      400px 100px white,
+      300px 800px white,
+      200px 400px white,
+      100px 600px white;
+    /* The values above are random positions and sizes for the stars */
+    animation: twinkle 10s infinite; /* Adds a twinkling effect */
+    z-index: -1; /* Ensures stars are behind other content */
+}
+
+/* Twinkling animation */
+@keyframes twinkle {
+    0%, 100% {
+        opacity: 0.7;
+    }
+    50% {
+        opacity: 1;
+    }
+}
+
+/* Adjust other elements to better fit the dark background */
+.navbar, footer {
+    background-color: #222; /* Darker background for navbar and footer */
+    color: white; /* Change text color to white for visibility */
+}
+
+.navbar a, footer a {
+    color: #ddd; /* Lighter color for links */
+}
+
+.content, h1, h2, h3, p, ul, ol, li {
+    color: white; /* Change text color to white for visibility */
 }
