@@ -68,6 +68,12 @@ p {
     text-align:start
 }
 
+/*breaks */
+hr {
+    border-color: #ffffff;
+    
+}
+
 /* Lists */
 ul, ol {
     text-align:initial;
