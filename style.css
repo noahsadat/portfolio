@@ -122,46 +122,25 @@ footer a:hover {
     text-decoration: underline;
 }
 
-/* Enhanced Starry Night Background with Scrolling */
 body {
-    margin: 0;
-    padding: 0;
-    background-color: black; /* Set background to pitch black */
-    overflow: auto; /* Allow scrolling */
-    position: relative; /* Position relative for pseudo-elements */
-    min-height: 200vh; /* Adjust as needed for content height */
+    background-color: #000; /* Black background for night sky */
+    color: #bbb9b9; /* Soft white color for text */
+    text-shadow: 0.5px 0.5px 9px rgba(255, 255, 255, 0.7); /* Smooth shadow for text */
 }
 
-/* Create starry sky effect using pseudo-elements */
-body::before {
-    content: '';
+.star {
     position: absolute;
-    top: 0;
-    left: 0;
-    width: 100%;
-    height: 200%; /* Same as body min-height */
-    background: transparent;
-    z-index: -1;
-
-    /* Using box-shadow to create stars */
-    box-shadow: 0 0 2px #fff, /* Star 1 */
-                50px 100px 2px #fff, /* Star 2 */
-                100px 200px 2px #fff, /* Star 3 */
-                150px 50px 2px #fff, /* Star 4 */
-                /* ... more box-shadow entries for additional stars ... */
-                2000px 1900px 2px #fff, /* Last Star */
-                2050px 1950px 2px #fff; /* Overflow Star */
-
-    /* Ensuring that stars are only visible within the body area */
-    overflow: hidden;
+    width: 2px;
+    height: 2px;
+    background: white;
+    box-shadow: 0 0 5px #fff, 0 0 10px #fff; /* Glow effect for stars */
+    border-radius: 50%;
 }
 
-/* Optional: Add subtle animation to stars for a twinkling effect */
-@keyframes twinkling {
-    0%, 100% { opacity: 0.7; }
-    50% { opacity: 1; }
+.star {
+    position: absolute;
+    background: rgb(255, 255, 255);
+    border-radius: 50%;
+    box-shadow: 0 0 3px #fff, 0 0 6px #fff; /* Adjusted glow effect */
 }
 
-body::before {
-    animation: twinkling 2s infinite alternate;
-}
