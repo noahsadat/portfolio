@@ -33,25 +33,3 @@
 </body>
 
 </html>
-
-<script>
-    function createStars() {
-        const numberOfStars = 100;
-        for (let i = 0; i < numberOfStars; i++) {
-            const star = document.createElement('div');
-            star.className = 'star';
-
-            // Random size for stars, with 70% being smaller
-            const starSize = i < 70 ? (Math.random() * 1) + 1 : (Math.random() * 2) + 2; // Smaller stars range from 1-2px, larger stars 2-4px
-            star.style.width = `${starSize}px`;
-            star.style.height = `${starSize}px`;
-
-            star.style.left = `${Math.random() * 100}%`;
-            star.style.top = `${Math.random() * 100}%`;
-            document.body.appendChild(star);
-        }
-    }
-
-    window.onload = createStars;
-</script>
-

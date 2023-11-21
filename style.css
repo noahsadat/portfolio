@@ -121,26 +121,3 @@ footer a {
 footer a:hover {
     text-decoration: underline;
 }
-
-body {
-    background-color: #000; /* Black background for night sky */
-    color: #bbb9b9; /* Soft white color for text */
-    text-shadow: 0.5px 0.5px 9px rgba(255, 255, 255, 0.7); /* Smooth shadow for text */
-}
-
-.star {
-    position: absolute;
-    width: 2px;
-    height: 2px;
-    background: white;
-    box-shadow: 0 0 5px #fff, 0 0 10px #fff; /* Glow effect for stars */
-    border-radius: 50%;
-}
-
-.star {
-    position: absolute;
-    background: rgb(255, 255, 255);
-    border-radius: 50%;
-    box-shadow: 0 0 3px #fff, 0 0 6px #fff; /* Adjusted glow effect */
-}
-
