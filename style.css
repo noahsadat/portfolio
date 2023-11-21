@@ -127,10 +127,21 @@ div {
     margin-bottom:  40px;
 }
 
-div p{
-    margin: 2% 10%
+div p {
+    margin: 2% 30%;
 }
 
-div ul{
-    margin: 2% 10%
+div ul {
+    margin: 2% 30%;
+}
+
+/* Styles for mobile devices */
+@media screen and (max-width: 600px) {
+    div p {
+        margin: 10px; /* Example margin for mobile */
+    }
+
+    div ul {
+        margin: 10px; /* Example margin for mobile */
+    }
 }
