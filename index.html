@@ -10,7 +10,7 @@
     <header>
         <h1>My Resume</h1>
     </header>
-    
+
     <div>
         <h2>Summary</h2>
     <p>Life is fundamentally an experiential journey, where even scholarly pursuits play a secondary role. The nature of our endeavors, their longevity, and our method of execution are the architects of our authentic selves. My life's narrative has been favorably crafted. Originating in one country and migrating to another, I've reaped the benefits of diverse perspectives. Salesmanship was a skill acquired early in my familial context, teaching me that the true worth lies in what is sought after. Athletics taught me the essence of discipline, and my spiritual faith has been a testament to the power of belief in keeping one from trailing behind.</p>
@@ -42,3 +42,31 @@
 </body>
 
 </html>
+
+<script>
+    function createStars() {
+        const numberOfStars = 10;
+        for (let i = 0; i < numberOfStars; i++) {
+            const star = document.createElement('div');
+            star.className = 'star';
+
+            // Randomize star size
+            const starSize = Math.random() * 2 + 1; // Size will range from 2px to 4px
+            star.style.width = `${starSize}px`;
+            star.style.height = `${starSize}px`;
+
+            // Random position
+            star.style.left = `${Math.random() * 100}%`;
+            star.style.top = `${Math.random() * 100}%`;
+
+            // Random animation delay
+            const animationDelay = Math.random() * 5; // Random delay between 0 to 5 seconds
+            star.style.animationDelay = `${animationDelay}s`;
+
+            document.body.appendChild(star);
+        }
+    }
+
+    window.onload = createStars;
+</script>
+

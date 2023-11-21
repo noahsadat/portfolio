@@ -145,3 +145,27 @@ div ul {
         margin: 10px; /* Example margin for mobile */
     }
 }
+
+body {
+    background-color: #fff; /* White background */
+}
+
+body {
+    background-color: #fff; /* White background */
+}
+
+.star {
+    position: absolute;
+    width: 2px; /* Fixed size for stars */
+    height: 2px;
+    background: black; /* Black stars */
+    border-radius: 50%;
+    opacity: 0; /* Stars start invisible */
+    box-shadow: 0 0 5px #000, 0 0 10px #000; /* Black glow effect */
+    animation: blinkStar 3s infinite ease-in-out; /* Animation */
+}
+
+@keyframes blinkStar {
+    0%, 100% { opacity: 0; }
+    50% { opacity: 1; }
+}
