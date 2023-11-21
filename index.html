@@ -45,28 +45,43 @@
 
 <script>
     function createStars() {
-        const numberOfStars = 10;
+        const numberOfStars = 20;
         for (let i = 0; i < numberOfStars; i++) {
-            const star = document.createElement('div');
-            star.className = 'star';
-
-            // Randomize star size
-            const starSize = Math.random() * 2 + 1; // Size will range from 2px to 4px
-            star.style.width = `${starSize}px`;
-            star.style.height = `${starSize}px`;
-
-            // Random position
-            star.style.left = `${Math.random() * 100}%`;
-            star.style.top = `${Math.random() * 100}%`;
-
-            // Random animation delay
-            const animationDelay = Math.random() * 5; // Random delay between 0 to 5 seconds
-            star.style.animationDelay = `${animationDelay}s`;
-
-            document.body.appendChild(star);
+            createStar();
         }
+    }
+
+    function createStar() {
+        const star = document.createElement('div');
+        star.className = 'star';
+
+        // Randomize star size
+        const starSize = Math.random() * 2 + 2; // Size ranges from 2px to 4px
+        star.style.width = `${starSize}px`;
+        star.style.height = `${starSize}px`;
+
+        // Set initial position and animation delay
+        setPositionAndDelay(star);
+
+        // Update position and delay at the end of each animation cycle
+        star.addEventListener('animationiteration', () => {
+            setPositionAndDelay(star);
+        });
+
+        document.body.appendChild(star);
+    }
+
+    function setPositionAndDelay(star) {
+        // Random position
+        star.style.left = `${Math.random() * 100}%`;
+        star.style.top = `${Math.random() * 100}%`;
+
+        // Random animation delay
+        const animationDelay = Math.random() * 5; // Delay between 0 to 5 seconds
+        star.style.animationDelay = `${animationDelay}s`;
     }
 
     window.onload = createStars;
 </script>
+
 
