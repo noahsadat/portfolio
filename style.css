@@ -121,3 +121,7 @@ footer a {
 footer a:hover {
     text-decoration: underline;
 }
+
+div {
+    margin: 30px 30px;
+}
