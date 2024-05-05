@@ -9,7 +9,7 @@ function createStars() {
 function createStar() {
     const star = document.createElement('div');
     star.className = 'star';
-    const starSize = Math.random() * 0.3 + 1; // Size ranges from 1px to 1.5px
+    const starSize = Math.random() * 0.3 + 1.5; // Size ranges from 1px to 1.5px
     star.style.width = `${starSize}px`;
     star.style.height = `${starSize}px`;
 
@@ -29,10 +29,6 @@ function setPositionAndDelay(star) {
 window.onload = createStars;
 
 
-
-
-
-        
 
         document.addEventListener("DOMContentLoaded", function() {
             new Typed('#typed-text', {
@@ -56,6 +52,28 @@ window.onload = createStars;
                 loop: true
             });
         });
+
+        document.addEventListener("DOMContentLoaded", function() {
+            new Typed('#typed-text-skills', {
+                strings: [
+                    "Frontend Development",
+                    "Creative Design",
+                    "Sales",
+                    "Tennis",
+                    "Management",
+                    "Optimization",
+                    "Modernization",
+                    "Evaluation",
+                    "Integration"
+                ],
+                typeSpeed: 75,
+                backSpeed: 70,
+                startDelay: 200,
+                backDelay: 500,
+                cursorChar: '|',
+                loop: true
+            });
+        });
         
         document.addEventListener("DOMContentLoaded", function() {
             const cards = document.querySelectorAll('.card');
@@ -64,7 +82,7 @@ window.onload = createStars;
                 const rect = element.getBoundingClientRect();
                 const elementCenter = rect.top + rect.height / 2;
                 const viewportCenter = window.innerHeight / 2;
-                const tolerance = 300; // You can adjust this tolerance for more flexibility
+                const tolerance = 300; // This is the vertical midpoint tolerance
         
                 return Math.abs(viewportCenter - elementCenter) <= tolerance;
             }
@@ -79,10 +97,11 @@ window.onload = createStars;
                 });
             }
         
-            // Trigger the function initially and on scroll
-            checkCards();
-            window.addEventListener('scroll', checkCards);
+            checkCards(); // Check immediately on load
+            window.addEventListener('scroll', checkCards); // Check on every scroll
         });
+        
+        
         
 
     
