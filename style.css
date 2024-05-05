@@ -20,6 +20,10 @@ html, body {
     0%, 100% { opacity: 0; }
     50% { opacity: 1; }
 }
+html, body {
+  height: 100%; /* might need to be min-height: 100% depending on content */
+}
+
 
 
 
