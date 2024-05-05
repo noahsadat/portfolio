@@ -62,30 +62,30 @@
             });
         });
         
-        document.addEventListener("DOMContentLoaded", function () {
+        document.addEventListener("DOMContentLoaded", function() {
             const cards = document.querySelectorAll('.card');
         
-            function isElementInViewport(el) {
-                const rect = el.getBoundingClientRect();
-                return (
-                    rect.top >= 0 &&
-                    rect.left >= 0 &&
-                    rect.bottom <= (window.innerHeight || document.documentElement.clientHeight) &&
-                    rect.right <= (window.innerWidth || document.documentElement.clientWidth)
-                );
+            function isCenterInViewport(element) {
+                const rect = element.getBoundingClientRect();
+                const elementCenter = rect.top + rect.height / 2;
+                const viewportCenter = window.innerHeight / 2;
+                const tolerance = 300; // You can adjust this tolerance for more flexibility
+        
+                return Math.abs(viewportCenter - elementCenter) <= tolerance;
             }
         
-            function checkPosition() {
-                for (let i = 0; i < cards.length; i++) {
-                    if (isElementInViewport(cards[i])) {
-                        cards[i].classList.add('scale');
+            function checkCards() {
+                cards.forEach(card => {
+                    if (isCenterInViewport(card)) {
+                        card.classList.add('scale');
                     } else {
-                        cards[i].classList.remove('scale');
+                        card.classList.remove('scale');
                     }
-                }
+                });
             }
         
-            window.addEventListener('scroll', checkPosition);
-            checkPosition(); // Initial check if elements are in viewport on load
+            // Trigger the function initially and on scroll
+            checkCards();
+            window.addEventListener('scroll', checkCards);
         });
         
