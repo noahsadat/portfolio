@@ -1,6 +1,6 @@
 
         function createStars() {
-            const numberOfStars = 20;
+            const numberOfStars = 50;
             for (let i = 0; i < numberOfStars; i++) {
                 createStar();
             }
@@ -32,7 +32,7 @@
             star.style.top = `${Math.random() * 100}%`;
     
             // Random animation delay
-            const animationDelay = Math.random() * 9; // Delay between 0 to 5 seconds
+            const animationDelay = Math.random() * 7; // Delay between 0 to 5 seconds
             star.style.animationDelay = `${animationDelay}s`;
         }
     
@@ -62,4 +62,30 @@
             });
         });
         
+        document.addEventListener("DOMContentLoaded", function () {
+            const cards = document.querySelectorAll('.card');
+        
+            function isElementInViewport(el) {
+                const rect = el.getBoundingClientRect();
+                return (
+                    rect.top >= 0 &&
+                    rect.left >= 0 &&
+                    rect.bottom <= (window.innerHeight || document.documentElement.clientHeight) &&
+                    rect.right <= (window.innerWidth || document.documentElement.clientWidth)
+                );
+            }
+        
+            function checkPosition() {
+                for (let i = 0; i < cards.length; i++) {
+                    if (isElementInViewport(cards[i])) {
+                        cards[i].classList.add('scale');
+                    } else {
+                        cards[i].classList.remove('scale');
+                    }
+                }
+            }
+        
+            window.addEventListener('scroll', checkPosition);
+            checkPosition(); // Initial check if elements are in viewport on load
+        });
         

@@ -44,7 +44,7 @@
     top: 0;
     z-index: 1000;
     background-color: #212529f9;
-    box-shadow:2px 2px 30px 30px #212529f9;
+    box-shadow:2px 2px 15px 20px #212529f9;
 }
   
   .cards .card {
@@ -52,13 +52,22 @@
   }
   
   .cards .card:hover {
-    transform: scale(1.1, 1.1);
+    transform: scale(1.04, 1.04);
   }
-  
-  .cards:hover > .card:not(:hover) {
-    filter: blur(10px);
-    transform: scale(0.9, 0.9);
-  }
+  .cards .card.scale {
+    transform: scale(1.04, 1.04);
+    transition: transform 0.3s ease-in-out;
+}
 
+
+  .card-title {
+    color: #8d8d8d;
+  }
+  .card-text {
+    color: #cfcfcf;
+  }
+  .card {
+    border-color: #ffffff;
+  }
   
   
