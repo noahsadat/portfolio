@@ -42,16 +42,16 @@
         document.addEventListener("DOMContentLoaded", function() {
             new Typed('#typed-text', {
                 strings: [
-                    "Driving innovative transformation",
-                    "Elevating performance standards",
-                    "Fostering curious culture",
-                    "Building strong partnerships",
-                    "Orchestrating efficient operations",
-                    "Pioneering new methodologies",
-                    "Delivering consistent results",
-                    "Manifesting visionary ideas",
-                    "Empowering team potential",
-                    "Advancing insightful knowledge"
+                    "Innovative Drive",
+                    "Elevating Standards",
+                    "Curious Culture",
+                    "Strong Partnerships",
+                    "Efficient Orchestration",
+                    "Pioneering Methodologies",
+                    "Consistent Delivery",
+                    "Visionary Manifestation",
+                    "Empowering Potential",
+                    "Insightful Advancement"
                 ],
                 typeSpeed: 75,
                 backSpeed: 70,
