@@ -1,6 +1,6 @@
 
 function createStars() {
-    const numberOfStars = 50;
+    const numberOfStars = 200;
     for (let i = 0; i < numberOfStars; i++) {
         createStar();
     }
@@ -9,7 +9,7 @@ function createStars() {
 function createStar() {
     const star = document.createElement('div');
     star.className = 'star';
-    const starSize = Math.random() * 0.5 + 1; // Size ranges from 1px to 1.5px
+    const starSize = Math.random() * 0.3 + 1; // Size ranges from 1px to 1.5px
     star.style.width = `${starSize}px`;
     star.style.height = `${starSize}px`;
 
@@ -22,7 +22,7 @@ function setPositionAndDelay(star) {
                                    document.documentElement.clientHeight, document.documentElement.scrollHeight, document.documentElement.offsetHeight);
     star.style.left = `${Math.random() * window.innerWidth}px`;
     star.style.top = `${Math.random() * documentHeight}px`;
-    const animationDelay = Math.random() * 5; // Delay between 0 to 5 seconds
+    const animationDelay = Math.random() * 4; // Delay between 0 to 5 seconds
     star.style.animationDelay = `${animationDelay}s`;
 }
 
