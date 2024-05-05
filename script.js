@@ -75,31 +75,26 @@ window.onload = createStars;
             });
         });
         
-        document.addEventListener("DOMContentLoaded", function() {
+        document.addEventListener('DOMContentLoaded', () => {
+            const observer = new IntersectionObserver((entries) => {
+              entries.forEach(entry => {
+                if (entry.isIntersecting) {
+                  entry.target.classList.add('visible');
+                } else {
+                  entry.target.classList.remove('visible');
+                }
+              });
+            }, {
+              threshold: 0.8  // Adjust if needed to trigger earlier or later as the card enters the viewport
+            });
+          
             const cards = document.querySelectorAll('.card');
-        
-            function isCenterInViewport(element) {
-                const rect = element.getBoundingClientRect();
-                const elementCenter = rect.top + rect.height / 2;
-                const viewportCenter = window.innerHeight / 2;
-                const tolerance = 300; // This is the vertical midpoint tolerance
-        
-                return Math.abs(viewportCenter - elementCenter) <= tolerance;
-            }
-        
-            function checkCards() {
-                cards.forEach(card => {
-                    if (isCenterInViewport(card)) {
-                        card.classList.add('scale');
-                    } else {
-                        card.classList.remove('scale');
-                    }
-                });
-            }
-        
-            checkCards(); // Check immediately on load
-            window.addEventListener('scroll', checkCards); // Check on every scroll
-        });
+            cards.forEach(card => {
+              observer.observe(card);
+            });
+          });
+          
+          
         
         
         

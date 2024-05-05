@@ -6,6 +6,7 @@ html, body {
   position: relative; /* Ensures relative positioning for absolute children */
   overflow-x: hidden; /* Prevents horizontal scrollbar due to absolute positioning */
   scroll-behavior: smooth;
+  height: 100%; /* might need to be min-height: 100% depending on content */
 }
 
 .star {
@@ -20,9 +21,6 @@ html, body {
 @keyframes blinkStar {
     0%, 100% { opacity: 0; }
     50% { opacity: 1; }
-}
-html, body {
-  height: 100%; /* might need to be min-height: 100% depending on content */
 }
 
    .btnstyle {
@@ -55,18 +53,6 @@ html, body {
     background-color: #212529f9;
     box-shadow:0px 0px 20px 40px #212529f9;
 }
-  
-.cards .card {
-  transition: transform 250ms ease-in-out; /* Smooth transition for scale transformations */
-}
-
-.cards .card:hover, .cards .card.scale {
-  transform: scale(1.04); /* Apply scale effect on both hover and viewport centering */
-}
-
-
-
-
 
   .card-title {
     color: #8d8d8d;
@@ -76,7 +62,18 @@ html, body {
   }
   .card {
     border-color: #ffffff;
+    transition: transform 0.3s ease-in-out;
   }
+
+  .card {
+    transition: transform 0.3s ease-in-out;
+    transform: scale(1); /* Normal state */
+  }
+  
+  .card.visible, .card:hover {
+    transform: scale(1.04); /* Scale up when visible or hovered */
+  }
+  
   
   .animated-break-line {
     width: 50%; /* Width of the line */
