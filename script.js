@@ -1,43 +1,38 @@
 
-        function createStars() {
-            const numberOfStars = 50;
-            for (let i = 0; i < numberOfStars; i++) {
-                createStar();
-            }
-        }
-    
-        function createStar() {
-            const star = document.createElement('div');
-            star.className = 'star';
-    
-            // Randomize star size
-            const starSize = Math.random() * 0.5 + 1; // Size ranges from 2px to 4px
-            star.style.width = `${starSize}px`;
-            star.style.height = `${starSize}px`;
-    
-            // Set initial position and animation delay
-            setPositionAndDelay(star);
-    
-            // Update position and delay at the end of each animation cycle
-            star.addEventListener('animationiteration', () => {
-                setPositionAndDelay(star);
-            });
-    
-            document.body.appendChild(star);
-        }
-    
-        function setPositionAndDelay(star) {
-            // Random position
-            star.style.left = `${Math.random() * 100}%`;
-            star.style.top = `${Math.random() * 100}%`;
-    
-            // Random animation delay
-            const animationDelay = Math.random() * 7; // Delay between 0 to 5 seconds
-            star.style.animationDelay = `${animationDelay}s`;
-        }
-    
-        window.onload = createStars;
+function createStars() {
+    const numberOfStars = 50;
+    for (let i = 0; i < numberOfStars; i++) {
+        createStar();
+    }
+}
 
+function createStar() {
+    const star = document.createElement('div');
+    star.className = 'star';
+    const starSize = Math.random() * 0.5 + 1; // Size ranges from 1px to 1.5px
+    star.style.width = `${starSize}px`;
+    star.style.height = `${starSize}px`;
+
+    setPositionAndDelay(star);
+    document.body.appendChild(star);
+}
+
+function setPositionAndDelay(star) {
+    const documentHeight = Math.max(document.body.scrollHeight, document.body.offsetHeight,
+                                   document.documentElement.clientHeight, document.documentElement.scrollHeight, document.documentElement.offsetHeight);
+    star.style.left = `${Math.random() * window.innerWidth}px`;
+    star.style.top = `${Math.random() * documentHeight}px`;
+    const animationDelay = Math.random() * 5; // Delay between 0 to 5 seconds
+    star.style.animationDelay = `${animationDelay}s`;
+}
+
+window.onload = createStars;
+
+
+
+
+
+        
 
         document.addEventListener("DOMContentLoaded", function() {
             new Typed('#typed-text', {
