@@ -85,7 +85,7 @@ window.onload = createStars;
                 }
               });
             }, {
-              threshold: 0.8  // Adjust if needed to trigger earlier or later as the card enters the viewport
+              threshold: 0.95  // Adjust if needed to trigger earlier or later as the card enters the viewport
             });
           
             const cards = document.querySelectorAll('.card');
