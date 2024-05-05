@@ -1,0 +1,64 @@
+
+        .star {
+    position: absolute;
+    width: 0.5px; /* Fixed size for stars */
+    height: 0.5px;
+    background: rgb(255, 255, 255); /* Black stars */
+    border-radius: 50%;
+    opacity: 0; /* Stars start invisible */
+    box-shadow: 0 0 5px #fffafa, 0 0 10px #ffffff; /* Black glow effect */
+    animation: blinkStar 3s infinite ease-in-out; /* Animation */
+}
+
+@keyframes blinkStar {
+    0%, 100% { opacity: 0; }
+    50% { opacity: 1; }
+}
+
+   
+   .btnstyle {
+  background: linear-gradient(to right, #8d8d8d 0, #fff8f8 10%, #8d8d8d 20%);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  animation: shiny 9s infinite linear;
+}
+.btn {
+    transition: transform 0.3s ease-in-out; /* Smooth transition for transforming */
+  cursor: pointer; /* Optional: Changes the cursor on hover to indicate it's clickable */
+  font-weight: 500;
+}
+.btnstyle:hover {
+  transform: scale(1.05); /* Scales the button up slightly */
+}
+@keyframes shiny {
+  from {
+    background-position: -180px;
+  }
+  to {
+    background-position: 180px;
+  }
+}
+
+.sticky-top {
+    position: sticky;
+    top: 0;
+    z-index: 1000;
+    background-color: #212529f9;
+    box-shadow:2px 2px 30px 30px #212529f9;
+}
+  
+  .cards .card {
+    transition: 250ms;
+  }
+  
+  .cards .card:hover {
+    transform: scale(1.1, 1.1);
+  }
+  
+  .cards:hover > .card:not(:hover) {
+    filter: blur(10px);
+    transform: scale(0.9, 0.9);
+  }
+
+  
+  
