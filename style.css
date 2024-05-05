@@ -57,7 +57,6 @@
   .cards .card.scale {
     transform: scale(1.02);
     transition: transform 0.2s ease-in-out;
-    transition: transform 0.2s ease-out / Slower transition for smoother effect
 }
 
 
@@ -72,4 +71,28 @@
     border-color: #ffffff;
   }
   
-  
+  .animated-break-line {
+    width: 50%; /* Width of the line */
+    height: 0.5px; /* Height of the line */
+    margin: 0 auto; /* Centers the line horizontally */
+    background: linear-gradient(to right, #272727, #ffffff, #272727); /* Circular gradient effect with two main colors */
+    box-shadow: 0 0 5px #fffafa, 0 0 4px #ffffff; /* Black glow effect */
+    background-size: 200% 100%; /* Ensures there's enough gradient to slide */
+    animation: slideGradient 1s linear infinite alternate; /* Smooth, back and forth animation */
+}
+
+@keyframes slideGradient {
+    0% {
+        background-position: 0% 0;
+    }
+    100% {
+        background-position: 100% 0;
+    }
+}
+
+
+
+
+
+
+
