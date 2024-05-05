@@ -55,9 +55,11 @@
     transform: scale(1.04, 1.04);
   }
   .cards .card.scale {
-    transform: scale(1.04, 1.04);
-    transition: transform 0.3s ease-in-out;
+    transform: scale(1.02);
+    transition: transform 0.2s ease-in-out;
+    transition: transform 0.2s ease-out / Slower transition for smoother effect
 }
+
 
 
   .card-title {
