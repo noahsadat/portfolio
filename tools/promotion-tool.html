@@ -9,93 +9,93 @@
 </head>
 <body>
     <div class="container my-5 shadow-lg p-3 mb-5 bg-body rounded">
-        <h5>Wie lautet Ihre Aktionstitel?</h5>
+        <h5>What is the title of your campaign?</h5>
         <form id="titleForm" class="row g-3 needs-validation" novalidate>
             <div class="col-md-4">
-                <label for="deTitle" class="form-label">Aktionstitel (Deutsch):</label>
+                <label for="deTitle" class="form-label">Promotion title (DE):</label>
                 <input type="text" class="form-control" id="deTitle" name="deTitle" required>
                 <div class="invalid-feedback">
-                    Bitte geben Sie den Titel ein.
+                    Please enter the title.
                 </div>
             </div>
             <div class="col-md-4">
-                <label for="frTitle" class="form-label">Aktionstitel (Französisch):</label>
+                <label for="frTitle" class="form-label">Promotion title (FR):</label>
                 <input type="text" class="form-control" id="frTitle" name="frTitle" required>
                 <div class="invalid-feedback">
-                    Bitte geben Sie den Titel ein.
+                    Please enter the title.
                 </div>
             </div>
             <div class="col-md-4">
-                <label for="nlTitle" class="form-label">Aktionstitel (Niederländisch):</label>
+                <label for="nlTitle" class="form-label">Promotion title (NL):</label>
                 <input type="text" class="form-control" id="nlTitle" name="nlTitle" required>
                 <div class="invalid-feedback">
-                    Bitte geben Sie den Titel ein.
+                    Please enter the title.
                 </div>
             </div>
             <div class="col-md-4">
-                <label for="enTitle" class="form-label">Aktionstitel (Englisch):</label>
+                <label for="enTitle" class="form-label">Promotion title (EN):</label>
                 <input type="text" class="form-control" id="enTitle" name="enTitle" required>
                 <div class="invalid-feedback">
-                    Bitte geben Sie den Titel ein.
+                    Please enter the title.
                 </div>
             </div>
             <div class="col-md-4">
-                <label for="itTitle" class="form-label">Aktionstitel (Italienisch):</label>
+                <label for="itTitle" class="form-label">Promotion title (IT):</label>
                 <input type="text" class="form-control" id="itTitle" name="itTitle" required>
                 <div class="invalid-feedback">
-                    Bitte geben Sie den Titel ein.
+                    Please enter the title.
                 </div>
             </div>
             
-            <h5>Aktionsbeschreibung?(optional)</h5>
+            <h5>Description?(optional)</h5>
             <div class="col-md-4">
-                <label for="deDescription" class="form-label">Aktionsbeschreibung (Deutsch):</label>
+                <label for="deDescription" class="form-label">Description (DE):</label>
                 <input type="text" class="form-control" id="deDescription" name="deDescription" required>
                 <div class="invalid-feedback">
-                    Bitte geben Sie den Titel ein.
+                    Please enter the title.
                 </div>
             </div>
             <div class="col-md-4">
-                <label for="frDescription" class="form-label">Aktionsbeschreibung (Französisch):</label>
+                <label for="frDescription" class="form-label">Description (FR):</label>
                 <input type="text" class="form-control" id="frDescription" name="frDescription" required>
                 <div class="invalid-feedback">
-                    Bitte geben Sie den Titel ein.
+                    Please enter the title.
                 </div>
             </div>
             <div class="col-md-4">
-                <label for="nlDescription" class="form-label">Aktionsbeschreibung (Niederländisch):</label>
+                <label for="nlDescription" class="form-label">Description (NL):</label>
                 <input type="text" class="form-control" id="nlDescription" name="nlDescription" required>
                 <div class="invalid-feedback">
-                    Bitte geben Sie den Titel ein.
+                    Please enter the title.
                 </div>
             </div>
             <div class="col-md-4">
-                <label for="enDescription" class="form-label">Aktionsbeschreibung (Englisch):</label>
+                <label for="enDescription" class="form-label">Description (EN):</label>
                 <input type="text" class="form-control" id="enDescription" name="enDescription" required>
                 <div class="invalid-feedback">
-                    Bitte geben Sie den Titel ein.
+                    Please enter the title.
                 </div>
             </div>
             <div class="col-md-4">
-                <label for="itDescription" class="form-label">Aktionsbeschreibung (Italienisch):</label>
+                <label for="itDescription" class="form-label">Description (IT):</label>
                 <input type="text" class="form-control" id="itDescription" name="itDescription" required>
                 <div class="invalid-feedback">
-                    Bitte geben Sie den Titel ein.
+                    Please enter the title.
                 </div>
             </div>
 
             <div class="col-12">
-                <label class="form-label h5">Aktionsszeitraum</label>
+                <label class="form-label h5">Campaign period</label>
             </div>
             <div class="col-md-3">
-                <label for="startDate" class="form-label">von:</label>
+                <label for="startDate" class="form-label">from:</label>
                 <input type="text" class="form-control datepicker" id="startDate" required>
                 <div class="invalid-feedback">
                     Bitte geben Sie ein Startdatum ein.
                 </div>
             </div>
             <div class="col-md-3">
-                <label for="endDate" class="form-label">bis:</label>
+                <label for="endDate" class="form-label">to:</label>
                 <input type="text" class="form-control datepicker" id="endDate" required>
                 <div class="invalid-feedback">
                     Bitte geben Sie ein Enddatum ein.
@@ -103,88 +103,88 @@
             </div>
 
             <div class="col-12">
-                <label class="form-label h5">Ist die Aktion kombinierbar?</label><br>
-                <button type="button" class="btn btn-outline-secondary" onclick="updateCombinability(false)">Nicht kombinierbar</button>
-                <button type="button" class="btn btn-outline-secondary" onclick="updateCombinability(true)">Kombinierbar</button>
+                <label class="form-label h5">Can the campaign be combined?</label><br>
+                <button type="button" class="btn btn-outline-secondary" onclick="updateCombinability(false)">not combinable</button>
+                <button type="button" class="btn btn-outline-secondary" onclick="updateCombinability(true)">combinable</button>
             </div>
     
             <div class="col-12">
-                <label class="form-label h5">Ist die Aktion ausgeschlossen von Kategorien oder Marken?</label>
+                <label class="form-label h5">Is the promotion excluded from categories or brands?</label><br>
                 <div class="btn-group" role="group" aria-label="Exclusion options">
                     
-                    <button type="button" class="btn btn-outline-secondary exclusion-option" 
+        <button type="button" class="btn btn-outline-secondary exclusion-option" 
         onclick="updateExclusions(this)"
-        data-de="Akku- und Elektrowerkzeuge"
-        data-fr="Outils électriques"
-        data-nl="Accu- en elektrisch gereedschap">Akku- und Elektrowerkzeuge</button>
+        data-de="Automobile"
+        data-fr="Automobile"
+        data-nl="Automotive">Automotive</button>
 
         <button type="button" class="btn btn-outline-secondary exclusion-option" 
         onclick="updateExclusions(this)"
-        data-de="Schweißgeräte"
-        data-fr="postes de soudage"
-        data-nl="lasapparatuur">Schweißgeräte</button>
+        data-de="Bikes"
+        data-fr="Vélos"
+        data-nl="Fietsen">Bikes</button>
 
         <button type="button" class="btn btn-outline-secondary exclusion-option" 
         onclick="updateExclusions(this)"
-        data-de="Schweißrauchabsauganlagen"
-        data-fr="installations d’aspiration des fumées de soudage"
-        data-nl="lasrookafzuigsystemen">Schweißrauchabsauganlagen</button>
+        data-de="Laptops"
+        data-fr="Ordinateurs portables"
+        data-nl="Laptops">Laptops</button>
 
         <button type="button" class="btn btn-outline-secondary exclusion-option" 
         onclick="updateExclusions(this)"
-        data-de="Beleuchtung"
-        data-fr="lampes et lumières"
-        data-nl="verlichting">Beleuchtung</button>
+        data-de="Drohnen"
+        data-fr="Drones"
+        data-nl="Drones">Drones</button>
 
         <button type="button" class="btn btn-outline-secondary exclusion-option" 
         onclick="updateExclusions(this)"
-        data-de="Plasma-Anlagen"
-        data-fr="installations au plasma"
-        data-nl="plasma-installaties">Plasma-Anlagen</button>
+        data-de="Kleidung"
+        data-fr="Vêtements"
+        data-nl="Kleding">Clothing</button>
 
         <button type="button" class="btn btn-outline-secondary exclusion-option" 
         onclick="updateExclusions(this)"
-        data-de="Spotter"
-        data-fr="spotters"
-        data-nl="spottersp">Spotter</button>
+        data-de="Software"
+        data-fr="Logiciel"
+        data-nl="Software">Software</button>
 
         <button type="button" class="btn btn-outline-secondary exclusion-option" 
         onclick="updateExclusions(this)"
-        data-de="Induktionsgeräte"
-        data-fr="induction"
-        data-nl="inductie">Induktionsgeräte</button>
+        data-de="Dateien"
+        data-fr="Fichiers"
+        data-nl="Bestanden">Files</button>
 
                   </div><br>
                 <div class="btn-group mt-3" role="group" aria-label="Exclusion options">
                     <button type="button" class="btn btn-outline-secondary exclusion-option" 
         onclick="updateExclusions(this)"
-        data-de="Milwaukee"
-        data-fr="Milwaukee"
-        data-nl="Milwaukee">Milwaukee</button>
+        data-de="Brand one"
+        data-fr="Brand one"
+        data-nl="Brand one">Brand one</button>
 
         <button type="button" class="btn btn-outline-secondary exclusion-option" 
         onclick="updateExclusions(this)"
-        data-de="DeWALT"
-        data-fr="DeWALT"
-        data-nl="DeWALT">DeWALT</button>
+        data-de="Brand two"
+        data-fr="Brand two"
+        data-nl="Brand two">Brand two</button>
 
         <button type="button" class="btn btn-outline-secondary exclusion-option" 
         onclick="updateExclusions(this)"
-        data-de="Kerbl"
-        data-fr="Kerbl"
-        data-nl="Kerbl">Kerbl</button>
+        data-de="Brand three"
+        data-fr="Brand three"
+        data-nl="Brand three">Brand three</button>
 
         <button type="button" class="btn btn-outline-secondary exclusion-option" 
         onclick="updateExclusions(this)"
-        data-de="Gambit"
-        data-fr="Gambit"
-        data-nl="Gambit">Gambit</button>
+        data-de="Brand four"
+        data-fr="Brand four"
+        data-nl="Brand four">Brand four</button>
 
         <button type="button" class="btn btn-outline-secondary exclusion-option" 
         onclick="updateExclusions(this)"
-        data-de="tprosafe"
-        data-fr="tprosafe"
-        data-nl="tprosafe">tprosafe</button>
+        data-de="brand five"
+        data-fr="brand five"
+        data-nl="brand five">brand five</button>
                 </div>
             </div>
             
@@ -340,19 +340,19 @@ document.getElementById('deDescription').addEventListener('change', function() {
     const endDate = document.getElementById('endDate').value;
 
     // Grundlegenden Text für jede Sprache vorbereiten
-    let exclusionTextDe = "Nur solange der Vorrat reicht. Zzgl. gesetzlicher Umsatzsteuer. Diese Aktion gilt nur für ausgewählte Artikel. Ausgenommen sind vertraglich verhandelte Preise.";
-    let exclusionTextFr = "Dans la limite des stocks disponibles. Les prix ne comprennent pas la TVA. Cette promotion ne s'applique qu'aux articles sélectionnés. Les prix convenus contractuellement sont exclus.";
-    let exclusionTextNl = "Alleen zolang de voorraad strekt. Prijzen exclusief btw. Deze actie geldt alleen voor geselecteerde artikelen. Contractueel overeengekomen prijzen zijn uitgesloten.";
-    let exclusionTextEn = "Only while stocks last. Plus statutory sales tax. This promotion only applies to selected items. Contractually negotiated prices are excluded.";
-    let exclusionTextIt = "Solo fino a esaurimento scorte. Più l'imposta di legge sulle vendite. Questa promozione si applica solo agli articoli selezionati. Sono esclusi i prezzi negoziati contrattualmente.";
+    let exclusionTextDe = "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Proin tempor, magna sed molestie ultricies, felis odio facilisis justo.";
+    let exclusionTextFr = "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Plus taxes applicables. Cette offre est valable uniquement pour les articles sélectionnés.";
+    let exclusionTextNl = "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Exclusief wettelijke omzetbelasting. Deze aanbieding geldt alleen voor geselecteerde artikelen.";
+    let exclusionTextEn = "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Plus applicable taxes. This offer is only valid for selected items.";
+    let exclusionTextIt = "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Più tasse applicabili. Questa offerta è valida solo per gli articoli selezionati.";
 
     
 
-    let combinabilityTextDe = !isCombinable ? " Diese Aktion ist nicht kombinierbar mit anderen Aktionen. " : "";
-    let combinabilityTextFr = !isCombinable ? " Cette promotion n'est pas cumulable avec d'autres promotions. " : "";
-    let combinabilityTextNl = !isCombinable ? " Deze actie is niet combineerbaar met andere acties. " : "";
-    let combinabilityTextEn = !isCombinable ? " This promotion cannot be combined with other promotions. " : "";
-    let combinabilityTextIt = !isCombinable ? " Questa promozione non è cumulabile con altre promozioni. " : "";
+    let combinabilityTextDe = !isCombinable ? " Lorem ipsum dolor sit amet. Nicht kombinierbar. " : "";
+    let combinabilityTextFr = !isCombinable ? " Lorem ipsum dolor sit amet. Non cumulable. " : "";
+    let combinabilityTextNl = !isCombinable ? " Lorem ipsum dolor sit amet. Niet combineerbaar. " : "";
+    let combinabilityTextEn = !isCombinable ? " Lorem ipsum dolor sit amet. Not combinable. " : "";
+    let combinabilityTextIt = !isCombinable ? " Lorem ipsum dolor sit amet. Non cumulabile. " : "";
 
     if (exclusions.length > 0 && exclusions[0].de !== 'Nein') {
         let categoryListDe = exclusions.map(ex => ex.de).join(', ');
@@ -371,40 +371,40 @@ document.getElementById('deDescription').addEventListener('change', function() {
     document.getElementById('result').innerHTML = `
     
     <div class="container text-center my-3">
-        <button type="button" class="btn btn-primary" onclick="copyToClipboard()">Kopieren</button>
-    <button type="button" class="btn btn-secondary" onclick="resetForm()">Zurücksetzen</button>
-    <button type="button" class="btn btn-success" onclick="downloadXML()">XML-Datei Herunterladen</button>
+        <button type="button" class="btn btn-primary" onclick="copyToClipboard()">Copy Text</button>
+    <button type="button" class="btn btn-secondary" onclick="resetForm()">Reset</button>
+    <button type="button" class="btn btn-success" onclick="downloadXML()">Download XML-File</button>
     </div>
     
 
     <div class="alert alert-success">
-        <strong>Deutsch:</strong><br> Aktionstitel: ${deTitle}<br>
-        Aktionsbeschreibung: ${deDescription}<br>
-        Aktionszeitraum: Diese Aktion ist gültig vom ${startDate} bis zum ${endDate}<br>
+        <strong>Deutsch:</strong><br> Promotion title: ${deTitle}<br>
+        Description: ${deDescription}<br>
+        Campaign period: Diese Aktion ist gültig vom ${startDate} bis zum ${endDate}<br>
         Aktionsregeln: ${combinabilityTextDe}${exclusionTextDe}
     </div>
     <div class="alert alert-success">
-        <strong>Französisch:</strong><br> Aktionstitel: ${frTitle}<br>
-        Aktionsbeschreibung: ${frDescription}<br>
-        Aktionszeitraum: Promotion valable du ${startDate} au ${endDate}<br>
+        <strong>Französisch:</strong><br> Promotion title: ${frTitle}<br>
+        Description: ${frDescription}<br>
+        Campaign period: Promotion valable du ${startDate} au ${endDate}<br>
         Aktionsregeln: ${combinabilityTextFr}${exclusionTextFr}
     </div>
     <div class="alert alert-success">
-        <strong>Niederländisch:</strong><br> Aktionstitel: ${nlTitle}<br>
-        Aktionsbeschreibung: ${nlDescription}<br>
-        Aktionszeitraum: Actie geldig van ${startDate} tot en met ${endDate}<br>
+        <strong>Niederländisch:</strong><br> Promotion title: ${nlTitle}<br>
+        Description: ${nlDescription}<br>
+        Campaign period: Actie geldig van ${startDate} tot en met ${endDate}<br>
         Aktionsregeln: ${combinabilityTextNl}${exclusionTextNl}
     </div>
     <div class="alert alert-success">
-        <strong>Englisch:</strong><br> Aktionstitel: ${enTitle}<br>
-        Aktionsbeschreibung: ${enDescription}<br>
-        Aktionszeitraum: This promotion is valid from ${startDate} to ${endDate}<br>
+        <strong>Englisch:</strong><br> Promotion title: ${enTitle}<br>
+        Description: ${enDescription}<br>
+        Campaign period: This promotion is valid from ${startDate} to ${endDate}<br>
         Aktionsregeln: ${combinabilityTextEn}${exclusionTextEn}
     </div>
     <div class="alert alert-success">
-        <strong>Italienisch:</strong><br> Aktionstitel: ${itTitle}<br>
-        Aktionsbeschreibung: ${itDescription}<br>
-        Aktionszeitraum: Questa promozione è valida da ${startDate} a ${endDate}<br>
+        <strong>Italienisch:</strong><br> Promotion title: ${itTitle}<br>
+        Description: ${itDescription}<br>
+        Campaign period: Questa promozione è valida da ${startDate} a ${endDate}<br>
         Aktionsregeln: ${combinabilityTextIt}${exclusionTextIt}
     </div>
     `;
@@ -432,7 +432,7 @@ function copyToClipboard() {
 
     try {
         document.execCommand('copy');
-        alert('Text kopiert!');
+        alert('text has been copied!!');
     } catch (err) {
         console.error('Fehler beim Kopieren des Textes: ', err);
     }
@@ -493,35 +493,27 @@ function downloadXML() {
 
     // Deutsch
     let combinabilityTextDe = isCombinable ? "" : "Diese Aktion ist nicht kombinierbar.";
-    let exclusionTextDe = "Nur solange der Vorrat reicht. Zzgl. gesetzlicher Umsatzsteuer. Diese Aktion gilt nur für ausgewählte Artikel. Ausgenommen sind vertraglich verhandelte Preise.";
+    let exclusionTextDe = "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Proin tempor, magna sed molestie ultricies, felis odio facilisis justo.";
     
     // Französisch
     let combinabilityTextFr = isCombinable ? "" : "Cette promotion n'est pas combinable avec d'autres promotions.";
-    let exclusionTextFr = "Dans la limite des stocks disponibles. Les prix ne comprennent pas la TVA. Cette promotion s'applique uniquement aux articles sélectionnés. Les prix convenus contractuellement sont exclus.";
+    let exclusionTextFr = "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Plus taxes applicables. Cette offre est valable uniquement pour les articles sélectionnés.";
 
     // Niederländisch
     let combinabilityTextNl = isCombinable ? "" : "Deze actie is niet combineerbaar met andere acties.";
-    let exclusionTextNl = "Alleen zolang de voorraad strekt. Prijzen exclusief btw. Deze actie geldt alleen voor geselecteerde artikelen. Contractueel overeengekomen prijzen zijn uitgesloten.";
+    let exclusionTextNl = "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Exclusief wettelijke omzetbelasting. Deze aanbieding geldt alleen voor geselecteerde artikelen.";
 
     // Englisch
     let combinabilityTextEn = isCombinable ? "" : "This promotion cannot be combined with other promotions.";
-    let exclusionTextEn = "Only while stocks last. Plus statutory sales tax. This promotion only applies to selected items. Contractually negotiated prices are excluded.";
+    let exclusionTextEn = "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Plus applicable taxes. This offer is only valid for selected items.";
 
     // Italienisch
     let combinabilityTextIt = isCombinable ? "" : "Questa promozione non è cumulabile con altre promozioni.";
-    let exclusionTextIt = "Solo fino a esaurimento scorte. Più l'imposta di legge sulle vendite. Questa promozione si applica solo agli articoli selezionati. Sono esclusi i prezzi negoziati contrattualmente.";
+    let exclusionTextIt = "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Più tasse applicabili. Questa offerta è valida solo per gli articoli selezionati.";
 
 
     const xmlContent = `<?xml version="1.0" encoding="UTF-8" standalone="yes"?>
-<enfinity
-xsi:schemaLocation="http://www.intershop.com/xml/ns/enfinity/6.6/bc_marketing/impex bc_marketing.xsd
-http://www.intershop.com/xml/ns/enfinity/6.5/core/impex-dt dt.xsd"
-xmlns="http://www.intershop.com/xml/ns/enfinity/6.6/bc_marketing/impex"
-xmlns:ns2="http://www.intershop.com/xml/ns/enfinity/6.5/core/impex-dt"
-xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
-xmlns:xml="http://www.w3.org/XML/1998/namespace"
-xmlns:dt="http://www.intershop.com/xml/ns/enfinity/6.5/core/impex-dt"
-major="6" minor="6" family="enfinity" branch="enterprise" build="24.3.1.1-dev1">
+
 <promotion id="${promotionId}">
 <active>true</active>
 <applications>rest</applications>
@@ -530,7 +522,7 @@ major="6" minor="6" family="enfinity" branch="enterprise" build="24.3.1.1-dev1">
 <start-date>${formattedStartDate.format2}T23:50:00+00:00</start-date>
 <end-date>${formattedEndDate.format2}T22:50:00+00:00</end-date>
 <type-code>0</type-code>
-<creator-id>00001106@IWETEC</creator-id>
+<creator-id>00001106@COMPANY</creator-id>
 <currency>EUR</currency>
 <combinable>false</combinable>
 <default-rank>true</default-rank>
