@@ -1,0 +1,17 @@
+.tab-pane {
+    display: none; /* Hide all content by default */
+    opacity: 0;
+    transition: opacity 0.5s ease-in-out;
+}
+.active {
+    display: block; /* Show active tab content */
+    opacity: 1;
+}
+
+
+.tab-content {
+    border: 1px solid #495057; /* Borders around the content */
+    border-top: none; /* Removes the top border */
+    padding: 15px;
+    height: 600px;
+}

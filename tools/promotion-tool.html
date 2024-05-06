@@ -1,0 +1,641 @@
+<!DOCTYPE html>
+<html lang="en" data-bs-theme="dark">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-QWTKZyjpPEjISv5WaRU9OFeRpok6YctnYmDr5pNlyT2bRjXh0JMhjY6hW+ALEwIH" crossorigin="anonymous">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/bootstrap-datepicker/1.9.0/css/bootstrap-datepicker.min.css">
+    <title>Aktionstitel Generator</title>
+</head>
+<body>
+    <div class="container my-5 shadow-lg p-3 mb-5 bg-body rounded">
+        <h5>Wie lautet Ihre Aktionstitel?</h5>
+        <form id="titleForm" class="row g-3 needs-validation" novalidate>
+            <div class="col-md-4">
+                <label for="deTitle" class="form-label">Aktionstitel (Deutsch):</label>
+                <input type="text" class="form-control" id="deTitle" name="deTitle" required>
+                <div class="invalid-feedback">
+                    Bitte geben Sie den Titel ein.
+                </div>
+            </div>
+            <div class="col-md-4">
+                <label for="frTitle" class="form-label">Aktionstitel (Französisch):</label>
+                <input type="text" class="form-control" id="frTitle" name="frTitle" required>
+                <div class="invalid-feedback">
+                    Bitte geben Sie den Titel ein.
+                </div>
+            </div>
+            <div class="col-md-4">
+                <label for="nlTitle" class="form-label">Aktionstitel (Niederländisch):</label>
+                <input type="text" class="form-control" id="nlTitle" name="nlTitle" required>
+                <div class="invalid-feedback">
+                    Bitte geben Sie den Titel ein.
+                </div>
+            </div>
+            <div class="col-md-4">
+                <label for="enTitle" class="form-label">Aktionstitel (Englisch):</label>
+                <input type="text" class="form-control" id="enTitle" name="enTitle" required>
+                <div class="invalid-feedback">
+                    Bitte geben Sie den Titel ein.
+                </div>
+            </div>
+            <div class="col-md-4">
+                <label for="itTitle" class="form-label">Aktionstitel (Italienisch):</label>
+                <input type="text" class="form-control" id="itTitle" name="itTitle" required>
+                <div class="invalid-feedback">
+                    Bitte geben Sie den Titel ein.
+                </div>
+            </div>
+            
+            <h5>Aktionsbeschreibung?(optional)</h5>
+            <div class="col-md-4">
+                <label for="deDescription" class="form-label">Aktionsbeschreibung (Deutsch):</label>
+                <input type="text" class="form-control" id="deDescription" name="deDescription" required>
+                <div class="invalid-feedback">
+                    Bitte geben Sie den Titel ein.
+                </div>
+            </div>
+            <div class="col-md-4">
+                <label for="frDescription" class="form-label">Aktionsbeschreibung (Französisch):</label>
+                <input type="text" class="form-control" id="frDescription" name="frDescription" required>
+                <div class="invalid-feedback">
+                    Bitte geben Sie den Titel ein.
+                </div>
+            </div>
+            <div class="col-md-4">
+                <label for="nlDescription" class="form-label">Aktionsbeschreibung (Niederländisch):</label>
+                <input type="text" class="form-control" id="nlDescription" name="nlDescription" required>
+                <div class="invalid-feedback">
+                    Bitte geben Sie den Titel ein.
+                </div>
+            </div>
+            <div class="col-md-4">
+                <label for="enDescription" class="form-label">Aktionsbeschreibung (Englisch):</label>
+                <input type="text" class="form-control" id="enDescription" name="enDescription" required>
+                <div class="invalid-feedback">
+                    Bitte geben Sie den Titel ein.
+                </div>
+            </div>
+            <div class="col-md-4">
+                <label for="itDescription" class="form-label">Aktionsbeschreibung (Italienisch):</label>
+                <input type="text" class="form-control" id="itDescription" name="itDescription" required>
+                <div class="invalid-feedback">
+                    Bitte geben Sie den Titel ein.
+                </div>
+            </div>
+
+            <div class="col-12">
+                <label class="form-label h5">Aktionsszeitraum</label>
+            </div>
+            <div class="col-md-3">
+                <label for="startDate" class="form-label">von:</label>
+                <input type="text" class="form-control datepicker" id="startDate" required>
+                <div class="invalid-feedback">
+                    Bitte geben Sie ein Startdatum ein.
+                </div>
+            </div>
+            <div class="col-md-3">
+                <label for="endDate" class="form-label">bis:</label>
+                <input type="text" class="form-control datepicker" id="endDate" required>
+                <div class="invalid-feedback">
+                    Bitte geben Sie ein Enddatum ein.
+                </div>
+            </div>
+
+            <div class="col-12">
+                <label class="form-label h5">Ist die Aktion kombinierbar?</label><br>
+                <button type="button" class="btn btn-outline-secondary" onclick="updateCombinability(false)">Nicht kombinierbar</button>
+                <button type="button" class="btn btn-outline-secondary" onclick="updateCombinability(true)">Kombinierbar</button>
+            </div>
+    
+            <div class="col-12">
+                <label class="form-label h5">Ist die Aktion ausgeschlossen von Kategorien oder Marken?</label>
+                <div class="btn-group" role="group" aria-label="Exclusion options">
+                    
+                    <button type="button" class="btn btn-outline-secondary exclusion-option" 
+        onclick="updateExclusions(this)"
+        data-de="Akku- und Elektrowerkzeuge"
+        data-fr="Outils électriques"
+        data-nl="Accu- en elektrisch gereedschap">Akku- und Elektrowerkzeuge</button>
+
+        <button type="button" class="btn btn-outline-secondary exclusion-option" 
+        onclick="updateExclusions(this)"
+        data-de="Schweißgeräte"
+        data-fr="postes de soudage"
+        data-nl="lasapparatuur">Schweißgeräte</button>
+
+        <button type="button" class="btn btn-outline-secondary exclusion-option" 
+        onclick="updateExclusions(this)"
+        data-de="Schweißrauchabsauganlagen"
+        data-fr="installations d’aspiration des fumées de soudage"
+        data-nl="lasrookafzuigsystemen">Schweißrauchabsauganlagen</button>
+
+        <button type="button" class="btn btn-outline-secondary exclusion-option" 
+        onclick="updateExclusions(this)"
+        data-de="Beleuchtung"
+        data-fr="lampes et lumières"
+        data-nl="verlichting">Beleuchtung</button>
+
+        <button type="button" class="btn btn-outline-secondary exclusion-option" 
+        onclick="updateExclusions(this)"
+        data-de="Plasma-Anlagen"
+        data-fr="installations au plasma"
+        data-nl="plasma-installaties">Plasma-Anlagen</button>
+
+        <button type="button" class="btn btn-outline-secondary exclusion-option" 
+        onclick="updateExclusions(this)"
+        data-de="Spotter"
+        data-fr="spotters"
+        data-nl="spottersp">Spotter</button>
+
+        <button type="button" class="btn btn-outline-secondary exclusion-option" 
+        onclick="updateExclusions(this)"
+        data-de="Induktionsgeräte"
+        data-fr="induction"
+        data-nl="inductie">Induktionsgeräte</button>
+
+                  </div><br>
+                <div class="btn-group mt-3" role="group" aria-label="Exclusion options">
+                    <button type="button" class="btn btn-outline-secondary exclusion-option" 
+        onclick="updateExclusions(this)"
+        data-de="Milwaukee"
+        data-fr="Milwaukee"
+        data-nl="Milwaukee">Milwaukee</button>
+
+        <button type="button" class="btn btn-outline-secondary exclusion-option" 
+        onclick="updateExclusions(this)"
+        data-de="DeWALT"
+        data-fr="DeWALT"
+        data-nl="DeWALT">DeWALT</button>
+
+        <button type="button" class="btn btn-outline-secondary exclusion-option" 
+        onclick="updateExclusions(this)"
+        data-de="Kerbl"
+        data-fr="Kerbl"
+        data-nl="Kerbl">Kerbl</button>
+
+        <button type="button" class="btn btn-outline-secondary exclusion-option" 
+        onclick="updateExclusions(this)"
+        data-de="Gambit"
+        data-fr="Gambit"
+        data-nl="Gambit">Gambit</button>
+
+        <button type="button" class="btn btn-outline-secondary exclusion-option" 
+        onclick="updateExclusions(this)"
+        data-de="tprosafe"
+        data-fr="tprosafe"
+        data-nl="tprosafe">tprosafe</button>
+                </div>
+            </div>
+            
+        </form>
+        <div id="result" class="mt-3"></div>
+    </div>
+    
+
+
+
+
+
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/bootstrap-datepicker/1.9.0/js/bootstrap-datepicker.min.js"></script>
+<script>
+    $(document).ready(function() {
+        // Initialisiert das Datepicker-Widget für die Datumsfelder
+        $('.datepicker').datepicker({
+            format: 'dd.mm.yyyy',
+            autoclose: true
+        });
+    });
+
+    let exclusions = [];
+    let isCombinable = true; // Standardmäßig ist die Aktion kombinierbar
+
+    function updateExclusions(buttonElement) {
+    let selected = buttonElement.getAttribute('data-de');
+    let selectedFr = buttonElement.getAttribute('data-fr');
+    let selectedNl = buttonElement.getAttribute('data-nl');
+
+    if (selected === 'Nein') {
+        exclusions = [{de: 'Nein', fr: 'Non', nl: 'Nee'}];
+    } else {
+        const index = exclusions.findIndex(ex => ex.de === selected);
+        if (index === -1) {
+            exclusions.push({de: selected, fr: selectedFr, nl: selectedNl});
+        } else {
+            exclusions.splice(index, 1);
+        }
+    }
+    updateButtons();
+    processTitles();
+}
+
+function translateWithDeepL(text, targetLang, apiKey) {
+    const url = "https://api-free.deepl.com/v2/translate";
+
+    const params = new URLSearchParams();
+    params.append('auth_key', apiKey);
+    params.append('text', text);
+    params.append('target_lang', targetLang);
+
+    return fetch(url, {
+        method: 'POST',
+        body: params
+    })
+    .then(response => response.json())
+    .then(data => {
+        if (data.translations && data.translations.length > 0) {
+            return data.translations[0].text;
+        } else {
+            throw new Error('Translation failed or no translation returned.');
+        }
+    })
+    .catch(error => {
+        console.error('Error translating text:', error);
+        return ''; // Return empty string or handle error appropriately
+    });
+}
+
+document.getElementById('deTitle').addEventListener('change', function() {
+    const titleText = this.value;
+    const apiKey = 'cde1269e-de07-4498-9bc7-c901ef5f9ea7:fx';  // Replace with your actual DeepL API key
+
+    // Translate title to French
+    translateWithDeepL(titleText, 'FR', apiKey).then(translatedText => {
+        document.getElementById('frTitle').value = translatedText; // Make sure this matches the ID in your HTML
+    });
+
+    // Translate title to Dutch
+    translateWithDeepL(titleText, 'NL', apiKey).then(translatedText => {
+        document.getElementById('nlTitle').value = translatedText; // Make sure this matches the ID in your HTML
+    });
+
+    // Translate title to English
+    translateWithDeepL(titleText, 'EN', apiKey).then(translatedText => {
+        document.getElementById('enTitle').value = translatedText; // Make sure this matches the ID in your HTML
+    });
+    
+    // Translate title to Italian
+    translateWithDeepL(titleText, 'IT', apiKey).then(translatedText => {
+        document.getElementById('itTitle').value = translatedText; // Make sure this matches the ID in your HTML
+    });
+});
+
+
+document.getElementById('deDescription').addEventListener('change', function() {
+    const deText = this.value;
+    const apiKey = 'cde1269e-de07-4498-9bc7-c901ef5f9ea7:fx';  // Replace with your actual DeepL API key
+
+    // Translate to French
+    translateWithDeepL(deText, 'FR', apiKey).then(translatedText => {
+        document.getElementById('frDescription').value = translatedText;
+    });
+
+    // Translate to Dutch
+    translateWithDeepL(deText, 'NL', apiKey).then(translatedText => {
+        document.getElementById('nlDescription').value = translatedText;
+    });
+
+    // Translate to English
+    translateWithDeepL(deText, 'EN', apiKey).then(translatedText => {
+        document.getElementById('enDescription').value = translatedText;
+    });
+
+    // Translate to English
+    translateWithDeepL(deText, 'IT', apiKey).then(translatedText => {
+        document.getElementById('itDescription').value = translatedText;
+    });
+});
+
+
+    function updateButtons() {
+        // Aktualisiert die Zustände der Buttons basierend auf aktuellen Ausschlüssen
+        document.querySelectorAll('.exclusion-option').forEach(button => {
+            if (exclusions.length === 1 && exclusions[0] === 'nein') {
+                button.disabled = button.textContent !== 'Nein';
+            } else {
+                button.disabled = false;
+            }
+        });
+    }
+
+    function updateCombinability(combinable) {
+        // Aktualisiert die Kombinierbarkeit der Aktion
+        isCombinable = combinable;
+        processTitles();
+    }
+
+    function processTitles() {
+    const deTitle = document.getElementById('deTitle').value;
+    const frTitle = document.getElementById('frTitle').value;
+    const nlTitle = document.getElementById('nlTitle').value;
+    const enTitle = document.getElementById('enTitle').value;
+    const itTitle = document.getElementById('itTitle').value;
+    const deDescription = document.getElementById('deDescription').value;
+    const frDescription = document.getElementById('frDescription').value;
+    const nlDescription = document.getElementById('nlDescription').value;
+    const enDescription = document.getElementById('enDescription').value;
+    const itDescription = document.getElementById('itDescription').value;
+    const startDate = document.getElementById('startDate').value;
+    const endDate = document.getElementById('endDate').value;
+
+    // Grundlegenden Text für jede Sprache vorbereiten
+    let exclusionTextDe = "Nur solange der Vorrat reicht. Zzgl. gesetzlicher Umsatzsteuer. Diese Aktion gilt nur für ausgewählte Artikel. Ausgenommen sind vertraglich verhandelte Preise.";
+    let exclusionTextFr = "Dans la limite des stocks disponibles. Les prix ne comprennent pas la TVA. Cette promotion ne s'applique qu'aux articles sélectionnés. Les prix convenus contractuellement sont exclus.";
+    let exclusionTextNl = "Alleen zolang de voorraad strekt. Prijzen exclusief btw. Deze actie geldt alleen voor geselecteerde artikelen. Contractueel overeengekomen prijzen zijn uitgesloten.";
+    let exclusionTextEn = "Only while stocks last. Plus statutory sales tax. This promotion only applies to selected items. Contractually negotiated prices are excluded.";
+    let exclusionTextIt = "Solo fino a esaurimento scorte. Più l'imposta di legge sulle vendite. Questa promozione si applica solo agli articoli selezionati. Sono esclusi i prezzi negoziati contrattualmente.";
+
+    
+
+    let combinabilityTextDe = !isCombinable ? " Diese Aktion ist nicht kombinierbar mit anderen Aktionen. " : "";
+    let combinabilityTextFr = !isCombinable ? " Cette promotion n'est pas cumulable avec d'autres promotions. " : "";
+    let combinabilityTextNl = !isCombinable ? " Deze actie is niet combineerbaar met andere acties. " : "";
+    let combinabilityTextEn = !isCombinable ? " This promotion cannot be combined with other promotions. " : "";
+    let combinabilityTextIt = !isCombinable ? " Questa promozione non è cumulabile con altre promozioni. " : "";
+
+    if (exclusions.length > 0 && exclusions[0].de !== 'Nein') {
+        let categoryListDe = exclusions.map(ex => ex.de).join(', ');
+        let categoryListFr = exclusions.map(ex => ex.fr).join(', ');
+        let categoryListNl = exclusions.map(ex => ex.nl).join(', ');
+        let categoryListEn = exclusions.map(ex => ex.en).join(', ');
+        let categoryListIt = exclusions.map(ex => ex.it).join(', ');
+
+        exclusionTextDe += ` <br><br>Ausgeschlossen sind Artikel aus der Kategorie/Marke: ${categoryListDe}.`;
+        exclusionTextFr += ` <br><br>Sont exclus les articles de la catégorie/marque: ${categoryListFr}.`;
+        exclusionTextNl += ` <br><br>Uitgesloten zijn artikelen uit/van de volgende categorieën/merken: ${categoryListNl}.`;
+        exclusionTextEn += ` <br><br>Items from following Categories/Brands are excluded: ${categoryListEn}.`;
+        exclusionTextIt += ` <br><br>Sono esclusi gli articoli della categoria/marca: ${categoryListIt}.`;
+    }
+
+    document.getElementById('result').innerHTML = `
+    
+    <div class="container text-center my-3">
+        <button type="button" class="btn btn-primary" onclick="copyToClipboard()">Kopieren</button>
+    <button type="button" class="btn btn-secondary" onclick="resetForm()">Zurücksetzen</button>
+    <button type="button" class="btn btn-success" onclick="downloadXML()">XML-Datei Herunterladen</button>
+    </div>
+    
+
+    <div class="alert alert-success">
+        <strong>Deutsch:</strong><br> Aktionstitel: ${deTitle}<br>
+        Aktionsbeschreibung: ${deDescription}<br>
+        Aktionszeitraum: Diese Aktion ist gültig vom ${startDate} bis zum ${endDate}<br>
+        Aktionsregeln: ${combinabilityTextDe}${exclusionTextDe}
+    </div>
+    <div class="alert alert-success">
+        <strong>Französisch:</strong><br> Aktionstitel: ${frTitle}<br>
+        Aktionsbeschreibung: ${frDescription}<br>
+        Aktionszeitraum: Promotion valable du ${startDate} au ${endDate}<br>
+        Aktionsregeln: ${combinabilityTextFr}${exclusionTextFr}
+    </div>
+    <div class="alert alert-success">
+        <strong>Niederländisch:</strong><br> Aktionstitel: ${nlTitle}<br>
+        Aktionsbeschreibung: ${nlDescription}<br>
+        Aktionszeitraum: Actie geldig van ${startDate} tot en met ${endDate}<br>
+        Aktionsregeln: ${combinabilityTextNl}${exclusionTextNl}
+    </div>
+    <div class="alert alert-success">
+        <strong>Englisch:</strong><br> Aktionstitel: ${enTitle}<br>
+        Aktionsbeschreibung: ${enDescription}<br>
+        Aktionszeitraum: This promotion is valid from ${startDate} to ${endDate}<br>
+        Aktionsregeln: ${combinabilityTextEn}${exclusionTextEn}
+    </div>
+    <div class="alert alert-success">
+        <strong>Italienisch:</strong><br> Aktionstitel: ${itTitle}<br>
+        Aktionsbeschreibung: ${itDescription}<br>
+        Aktionszeitraum: Questa promozione è valida da ${startDate} a ${endDate}<br>
+        Aktionsregeln: ${combinabilityTextIt}${exclusionTextIt}
+    </div>
+    `;
+}
+
+    
+    function resetForm() {
+    document.getElementById('titleForm').reset();
+    exclusions = [];
+    document.querySelectorAll('.exclusion-option').forEach(button => {
+        button.disabled = false; // Re-enable all buttons
+    });
+    document.getElementById('result').innerHTML = '';
+}
+function copyToClipboard() {
+    const resultElement = document.getElementById('result');
+    const textToCopy = Array.from(resultElement.querySelectorAll('.alert')).map(alert => alert.innerText).join('\n\n');
+
+    // Use a temporary textarea to facilitate copying
+    const textarea = document.createElement('textarea');
+    textarea.textContent = textToCopy;
+    textarea.style.position = 'fixed';  // Prevents scrolling to bottom
+    document.body.appendChild(textarea);
+    textarea.select();
+
+    try {
+        document.execCommand('copy');
+        alert('Text kopiert!');
+    } catch (err) {
+        console.error('Fehler beim Kopieren des Textes: ', err);
+    }
+
+    document.body.removeChild(textarea);
+}
+
+function generatePromotionId() {
+    const length = 24; // Total desired length of the ID
+    const characters = 'ABCDEFGHIJKLMNOPQRSTUVWXYZabcdefghijklmnopqrstuvwxyz0123456789';
+    let result = '';
+    const underscorePosition = Math.floor(Math.random() * (length - 1)); // Position to place the underscore
+
+    for (let i = 0; i < length; i++) {
+        if (i === underscorePosition) {
+            result += '_';
+        } else {
+            result += characters.charAt(Math.floor(Math.random() * characters.length));
+        }
+    }
+    return result;
+}
+
+function formatDate(dateString) {
+    // This function assumes dateString is in "dd.mm.yyyy" format
+    const parts = dateString.split('.');
+    const day = parts[0];
+    const month = parts[1];
+    const year = parts[2];
+
+    // Creating "dd-mm-yyyy" format
+    const format1 = `${day}-${month}-${year}`;
+
+    // Creating "yyyy-mm-dd" format
+    const format2 = `${year}-${month}-${day}`;
+
+    return { format1, format2 };
+}
+
+let fullActionRulesTextDe, fullActionRulesTextFr, fullActionRulesTextNl;
+
+function downloadXML() {
+    const promotionId = generatePromotionId(); // Generate a unique promotion ID
+    const deTitle = document.getElementById('deTitle').value;
+    const frTitle = document.getElementById('frTitle').value;
+    const nlTitle = document.getElementById('nlTitle').value;
+    const enTitle = document.getElementById('enTitle').value;
+    const itTitle = document.getElementById('itTitle').value;
+    const deDescription = document.getElementById('deDescription').value;
+    const frDescription = document.getElementById('frDescription').value;
+    const nlDescription = document.getElementById('nlDescription').value;
+    const enDescription = document.getElementById('enDescription').value;
+    const itDescription = document.getElementById('itDescription').value;
+    const startDate = document.getElementById('startDate').value;
+    const endDate = document.getElementById('endDate').value;
+    const formattedStartDate = formatDate(startDate);
+    const formattedEndDate = formatDate(endDate);
+
+    // Deutsch
+    let combinabilityTextDe = isCombinable ? "" : "Diese Aktion ist nicht kombinierbar.";
+    let exclusionTextDe = "Nur solange der Vorrat reicht. Zzgl. gesetzlicher Umsatzsteuer. Diese Aktion gilt nur für ausgewählte Artikel. Ausgenommen sind vertraglich verhandelte Preise.";
+    
+    // Französisch
+    let combinabilityTextFr = isCombinable ? "" : "Cette promotion n'est pas combinable avec d'autres promotions.";
+    let exclusionTextFr = "Dans la limite des stocks disponibles. Les prix ne comprennent pas la TVA. Cette promotion s'applique uniquement aux articles sélectionnés. Les prix convenus contractuellement sont exclus.";
+
+    // Niederländisch
+    let combinabilityTextNl = isCombinable ? "" : "Deze actie is niet combineerbaar met andere acties.";
+    let exclusionTextNl = "Alleen zolang de voorraad strekt. Prijzen exclusief btw. Deze actie geldt alleen voor geselecteerde artikelen. Contractueel overeengekomen prijzen zijn uitgesloten.";
+
+    // Englisch
+    let combinabilityTextEn = isCombinable ? "" : "This promotion cannot be combined with other promotions.";
+    let exclusionTextEn = "Only while stocks last. Plus statutory sales tax. This promotion only applies to selected items. Contractually negotiated prices are excluded.";
+
+    // Italienisch
+    let combinabilityTextIt = isCombinable ? "" : "Questa promozione non è cumulabile con altre promozioni.";
+    let exclusionTextIt = "Solo fino a esaurimento scorte. Più l'imposta di legge sulle vendite. Questa promozione si applica solo agli articoli selezionati. Sono esclusi i prezzi negoziati contrattualmente.";
+
+
+    const xmlContent = `<?xml version="1.0" encoding="UTF-8" standalone="yes"?>
+<enfinity
+xsi:schemaLocation="http://www.intershop.com/xml/ns/enfinity/6.6/bc_marketing/impex bc_marketing.xsd
+http://www.intershop.com/xml/ns/enfinity/6.5/core/impex-dt dt.xsd"
+xmlns="http://www.intershop.com/xml/ns/enfinity/6.6/bc_marketing/impex"
+xmlns:ns2="http://www.intershop.com/xml/ns/enfinity/6.5/core/impex-dt"
+xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+xmlns:xml="http://www.w3.org/XML/1998/namespace"
+xmlns:dt="http://www.intershop.com/xml/ns/enfinity/6.5/core/impex-dt"
+major="6" minor="6" family="enfinity" branch="enterprise" build="24.3.1.1-dev1">
+<promotion id="${promotionId}">
+<active>true</active>
+<applications>rest</applications>
+<effect-discount-level>false</effect-discount-level>
+<rank>0</rank>
+<start-date>${formattedStartDate.format2}T23:50:00+00:00</start-date>
+<end-date>${formattedEndDate.format2}T22:50:00+00:00</end-date>
+<type-code>0</type-code>
+<creator-id>00001106@IWETEC</creator-id>
+<currency>EUR</currency>
+<combinable>false</combinable>
+<default-rank>true</default-rank>
+<multiple-allowed>false</multiple-allowed>
+<available>true</available>
+<stop-further-promotions>false</stop-further-promotions>
+<budget>
+<budget-id></budget-id>
+<budget-notification-threshold>0.0</budget-notification-threshold>
+<budget-notification-email></budget-notification-email>
+<send-mail-if-budget-reached>false</send-mail-if-budget-reached>
+<send-mail-if-threshold-reached>false</send-mail-if-threshold-reached>
+<disable-by-budget>false</disable-by-budget>
+<unlimited>true</unlimited>
+</budget>
+<promotion-code-definition>
+<promotion-code-required>false</promotion-code-required>
+<single-code></single-code>
+<single-code-total>0</single-code-total>
+<unlimited>true</unlimited>
+<code-customer-unlimited>false</code-customer-unlimited>
+<use-promotion-code-groups>false</use-promotion-code-groups>
+</promotion-code-definition>
+<combination>0</combination>
+<rebates>
+<currency>EUR</currency>
+<type-code>0</type-code>
+<classification-type-code>0</classification-type-code>
+<position>0</position>
+<condition-override-application-exclusion>false</condition-override-application-exclusion>
+<action-override-application-exclusion>false</action-override-application-exclusion>
+</rebates>
+<content>
+<content-activation-type>0</content-activation-type>
+</content>
+<use-campaign-target-group>false</use-campaign-target-group>
+<use-campaign-time-frame>false</use-campaign-time-frame>
+<custom-attributes>
+<custom-attribute name="DisableMessages" ns2:dt="boolean">false</custom-attribute>
+<custom-attribute name="EditedDate" ns2:dt="date">2024-04-18T09:10:44+00:00</custom-attribute>
+<custom-attribute name="LegalContentMessage" ns2:dt="text" xml:lang="de-AT">&lt;p&gt;${combinabilityTextDe}${exclusionTextDe}&lt;/p&gt;</custom-attribute>
+<custom-attribute name="LegalContentMessage" ns2:dt="text" xml:lang="de-DE">&lt;p&gt;${combinabilityTextDe}${exclusionTextDe}&lt;/p&gt;</custom-attribute>
+<custom-attribute name="LegalContentMessage" ns2:dt="text" xml:lang="en-US">&lt;p&gt;${combinabilityTextEn}${exclusionTextEn}&lt;/p&gt;</custom-attribute>
+<custom-attribute name="LegalContentMessage" ns2:dt="text" xml:lang="fr-BE">&lt;p&gt;${combinabilityTextFr}${exclusionTextFr}&lt;/p&gt;</custom-attribute>
+<custom-attribute name="LegalContentMessage" ns2:dt="text" xml:lang="fr-FR">&lt;p&gt;${combinabilityTextFr}${exclusionTextFr}&lt;/p&gt;</custom-attribute>
+<custom-attribute name="LegalContentMessage" ns2:dt="text" xml:lang="it-IT">&lt;p&gt;${combinabilityTextIt}${exclusionTextIt}&lt;/p&gt;</custom-attribute>
+<custom-attribute name="LegalContentMessage" ns2:dt="text" xml:lang="nl-BE">&lt;p&gt;${combinabilityTextNl}${exclusionTextNl}&lt;/p&gt;</custom-attribute>
+<custom-attribute name="LegalContentMessage" ns2:dt="text" xml:lang="nl-NL">&lt;p&gt;${combinabilityTextNl}${exclusionTextNl}&lt;/p&gt;</custom-attribute>
+<custom-attribute name="LongTitle" ns2:dt="text" xml:lang="de-AT">&lt;p&gt;${deDescription}&lt;/p&gt;</custom-attribute>
+<custom-attribute name="LongTitle" ns2:dt="text" xml:lang="de-DE">&lt;p&gt;${deDescription}&lt;/p&gt;</custom-attribute>
+<custom-attribute name="LongTitle" ns2:dt="text" xml:lang="en-US">&lt;p&gt;${enDescription}&lt;/p&gt;</custom-attribute>
+<custom-attribute name="LongTitle" ns2:dt="text" xml:lang="fr-BE">&lt;p&gt;${frDescription}&lt;/p&gt;</custom-attribute>
+<custom-attribute name="LongTitle" ns2:dt="text" xml:lang="fr-FR">&lt;p&gt;${frDescription}&lt;/p&gt;</custom-attribute>
+<custom-attribute name="LongTitle" ns2:dt="text" xml:lang="it-IT">&lt;p&gt;${itDescription}&lt;/p&gt;</custom-attribute>
+<custom-attribute name="LongTitle" ns2:dt="text" xml:lang="nl-BE">&lt;p&gt;${nlDescription}&lt;/p&gt;</custom-attribute>
+<custom-attribute name="LongTitle" ns2:dt="text" xml:lang="nl-NL">&lt;p&gt;${nlDescription}&lt;/p&gt;</custom-attribute>
+<custom-attribute name="RuleDescription" ns2:dt="text" xml:lang="de-AT">&lt;p&gt;Diese Aktion ist gültig vom ${startDate} bis zum ${endDate}&lt;/p&gt;</custom-attribute>
+<custom-attribute name="RuleDescription" ns2:dt="text" xml:lang="de-DE">&lt;p&gt;Diese Aktion ist gültig vom ${startDate} bis zum ${endDate}&lt;/p&gt;</custom-attribute>
+<custom-attribute name="RuleDescription" ns2:dt="text" xml:lang="en-US">&lt;p&gt;This promotion is valid from ${startDate} to ${endDate}&lt;/p&gt;</custom-attribute>
+<custom-attribute name="RuleDescription" ns2:dt="text" xml:lang="fr-BE">&lt;p&gt;Promotion valable du ${formattedStartDate.format1} au ${formattedStartDate.format2}&lt;/p&gt;</custom-attribute>
+<custom-attribute name="RuleDescription" ns2:dt="text" xml:lang="fr-FR">&lt;p&gt;Promotion valable du ${formattedStartDate.format1} au ${formattedStartDate.format2}&lt;/p&gt;</custom-attribute>
+<custom-attribute name="RuleDescription" ns2:dt="text" xml:lang="it-IT">&lt;p&gt;Questa promozione è valida da ${startDate} a ${endDate}&lt;/p&gt;</custom-attribute>
+<custom-attribute name="RuleDescription" ns2:dt="text" xml:lang="nl-BE">&lt;p&gt;Actie geldig van ${formattedStartDate.format1} tot en met ${formattedStartDate.format1}&lt;/p&gt;</custom-attribute>
+<custom-attribute name="RuleDescription" ns2:dt="text" xml:lang="nl-NL">&lt;p&gt;Actie geldig van ${formattedStartDate.format1} tot en met ${formattedStartDate.format1}&lt;/p&gt;</custom-attribute>
+<custom-attribute name="Title" ns2:dt="text" xml:lang="de-AT">&lt;h3&gt;&lt;strong&gt;${deTitle}&lt;/strong&gt;&lt;/h3&gt;</custom-attribute>
+<custom-attribute name="Title" ns2:dt="text" xml:lang="de-DE">&lt;h3&gt;&lt;strong&gt;${deTitle}&lt;/strong&gt;&lt;/h3&gt;</custom-attribute>
+<custom-attribute name="Title" ns2:dt="text" xml:lang="en-US">&lt;h3&gt;&lt;strong&gt;${enTitle}&lt;/strong&gt;&lt;/h3&gt;</custom-attribute>
+<custom-attribute name="Title" ns2:dt="text" xml:lang="fr-BE">&lt;h3&gt;&lt;strong&gt;${frTitle}&lt;/strong&gt;&lt;/h3&gt;</custom-attribute>
+<custom-attribute name="Title" ns2:dt="text" xml:lang="fr-FR">&lt;h3&gt;&lt;strong&gt;${frTitle}&lt;/strong&gt;&lt;/h3&gt;</custom-attribute>
+<custom-attribute name="Title" ns2:dt="text" xml:lang="it-IT">&lt;h3&gt;&lt;strong&gt;${itTitle}&lt;/strong&gt;&lt;/h3&gt;</custom-attribute>
+<custom-attribute name="Title" ns2:dt="text" xml:lang="nl-BE">&lt;h3&gt;&lt;strong&gt;${nlTitle}&lt;/strong&gt;&lt;/h3&gt;</custom-attribute>
+<custom-attribute name="Title" ns2:dt="text" xml:lang="nl-NL">&lt;h3&gt;&lt;strong&gt;${nlTitle}&lt;/strong&gt;&lt;/h3&gt;</custom-attribute>
+<custom-attribute name="UseExternalURL" ns2:dt="boolean" xml:lang="de-AT">false</custom-attribute>
+<custom-attribute name="UseExternalURL" ns2:dt="boolean" xml:lang="de-DE">false</custom-attribute>
+<custom-attribute name="UseExternalURL" ns2:dt="boolean" xml:lang="en-US">false</custom-attribute>
+<custom-attribute name="UseExternalURL" ns2:dt="boolean" xml:lang="fr-BE">false</custom-attribute>
+<custom-attribute name="UseExternalURL" ns2:dt="boolean" xml:lang="fr-FR">false</custom-attribute>
+<custom-attribute name="UseExternalURL" ns2:dt="boolean" xml:lang="it-IT">false</custom-attribute>
+<custom-attribute name="UseExternalURL" ns2:dt="boolean" xml:lang="nl-BE">false</custom-attribute>
+<custom-attribute name="UseExternalURL" ns2:dt="boolean" xml:lang="nl-NL">false</custom-attribute>
+<custom-attribute name="displayName" ns2:dt="string" xml:lang="de-DE">${deTitle}</custom-attribute>
+</custom-attributes>
+</promotion>
+</enfinity>`;
+
+    const blob = new Blob([xmlContent], { type: 'application/xml' });
+    const url = URL.createObjectURL(blob);
+    const link = document.createElement('a');
+    link.href = url;
+    link.download = 'Aktionsvorlage.xml';
+    document.body.appendChild(link);
+    link.click();
+    document.body.removeChild(link);
+    URL.revokeObjectURL(url);
+}
+
+
+
+
+</script>
+
+
+
+
+
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js" integrity="sha384-YvpcrYf0tY3lHB60NNkmXc5s9fDVZLESaAA55NDzOxhy9GkcIdslK1eN7N6jIeHz" crossorigin="anonymous"></script>
+</body>
+</html>
