@@ -1,0 +1,226 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-QWTKZyjpPEjISv5WaRU9OFeRpok6YctnYmDr5pNlyT2bRjXh0JMhjY6hW+ALEwIH" crossorigin="anonymous">
+    <title>Document</title>
+</head>
+<body>
+   
+    <style>
+        
+        html {
+      scroll-behavior: smooth; /* Enable smooth scrolling for the whole document */
+    }
+       .grid-container {
+  display: grid;
+  grid-template-columns: repeat(4, 2fr); /* creates 4 equal columns */
+  grid-template-rows: repeat(4, 2fr); /* creates 4 rows, height will be determined by content */
+  gap: 1rem; /* space between the grid items */
+}
+
+/* Grid item styles */
+.grid-item {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  border: 1px solid #ccc;
+  background: linear-gradient(to bottom right, #002850, #0a4d91);
+  border-radius: 5px;  
+  color: white;
+}
+
+/* Specific grid item sizes */
+.grid-item-1x2 {
+  grid-column: span 1;
+  grid-row: span 2;
+}
+
+.grid-item-2x2 {
+  grid-column: span 2;
+  grid-row: span 2;
+}
+
+.grid-item-2x1 {
+  grid-column: span 2;
+  grid-row: span 1;
+}
+
+@media (max-width: 992px) {
+  .grid-container {
+    grid-template-columns: repeat(1, 1fr); /* creates 1 column */
+    grid-template-rows: auto; /* rows height will be determined by content */
+  }
+
+  /* Resetting grid item size overrides */
+  .grid-item-1x2, .grid-item-2x2, .grid-item-2x1 {
+    grid-column: span 1;
+    grid-row: span 1;
+  }
+}
+
+
+.card:hover {
+ border-color: #002850;
+ box-shadow: 0 0 30px 0 #002b53;
+ transition: 0.5s ease-out;
+}
+
+.card {
+ transition: 0.5s ease-out;
+}    
+/* Targeting images and text inside the card */
+/* Targeting the image inside the card */
+.card img {
+  transition: filter 0.3s ease-in-out; /* Smooth transition for the filter effect */
+  transition: 0.5s ease-out;
+  pointer-events: none; /* Prevents clicking and other pointer events */
+}
+
+/* Adding a drop shadow on hover */
+.card:hover img {
+    filter: drop-shadow(0 0 20px rgb(255, 255, 255))
+           drop-shadow(0 0 10px rgb(255, 255, 255)); /* Customize the shadow as needed */
+  transition: 0.5s ease-out;
+}
+
+.card img {
+  max-width: 50%;  /* Maximum width allowed for images */
+  max-height: 50%; /* Maximum height allowed for images */
+  width: auto;       /* Maintain aspect ratio */
+  height: auto;      /* Maintain aspect ratio */
+  display: block;    /* Remove extra space below the image */
+  margin: 0 auto;    /* Center image if smaller than the max dimensions */
+  transition: 0.5s ease-out;
+  pointer-events: none;
+  
+  
+}
+
+.iwetec {
+    background: linear-gradient(
+        to right, rgb(0, 74, 111), #b6deff 35%, #b05f2d);
+    background-size: 200% auto;
+    -webkit-background-clip: text;
+    background-clip: text; /* Standard property if supported */
+    color: transparent;
+    -webkit-text-fill-color: transparent;
+    animation: gradient 2.5s linear infinite;
+    font-size: 3rem; /* Default text size */
+    font-weight:700;
+    margin: 0%;
+ }
+
+@keyframes gradient {
+    0% { background-position: 0% 75%; }
+    50% { background-position: 100% 50%; }
+    100% { background-position: 0% 70%; }
+}
+@media (min-width: 992px) { /* This targets screens wider than 991px */
+            .iwetec {
+                font-size: 4rem; /* Larger text size for big screens */
+                font-weight:700;
+            }
+        }
+
+
+.card-link {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    text-decoration: none;
+}
+
+    </style>
+
+
+
+<div class="container grid-container text-center">
+    <!-- Card 1: 1 column, 2 rows -->
+    <div class="card grid-item grid-item-1x2">
+        <a href="" class="card-link">
+            <img src="https://assetsiwetec.b-cdn.net/eShop/Industrie.png" style="max-width: 120px;">
+            <h4 style="color: rgb(138, 196, 223);">Industrie | Gewerbe Beleuchtung</h4>
+        </a>
+    </div>
+    
+    <!-- Card 2: 1 column, 1 row -->
+    <div class="card grid-item">
+        <a href="#2" class="card-link">
+            <img src="https://assetsiwetec.b-cdn.net/eShop/Innen.png" style="max-width: 120px;">
+            <h4 style="color: rgb(138, 196, 223);">Büro | Innenbeleuchtung</h4>
+        </a>
+    </div>
+    
+    <!-- Card 3: 1 column, 1 row -->
+    <div class="card grid-item">
+        <a href="#1" class="card-link">
+            <img src="https://assetsiwetec.b-cdn.net/eShop/Außen.png" style="max-width: 120px;">
+            <h4 style="color: rgb(138, 196, 223);">Außenbeleuchtung</h4>
+        </a>
+    </div>
+    
+    <!-- Card 4: 1 column, 2 rows -->
+    <div class="card grid-item grid-item-1x2">
+        <a href="" class="card-link">
+            <img src="https://assetsiwetec.b-cdn.net/eShop/Leuchtmittel.png" style="max-width: 120px;">
+            <h4 style="color: rgb(138, 196, 223);">Leuchtmittel | Retrofit</h4>
+        </a>
+    </div>
+    
+    <!-- Card 5: 2 columns, 2 rows -->
+    <div class="card grid-item grid-item-2x2 text-center">
+        <a href="" class="card-link">
+            <h4 style="color: rgb(88, 140, 165); margin: 2%">DIE NEUE KERNKOMPETENZ</h4>
+            <img src="https://assetsiwetec.b-cdn.net/eShop/IWETEC_Logo_weiss.png" style="max-width: 300px;">
+            <h1 class="iwetec">LED TECHNIK</h1>
+            <h4 style="color: rgb(88, 140, 165);">Ihr Partner für energiesparende Lichttechnik</h4>
+        </a>
+    </div>
+    
+    <!-- Card 6: 2 columns, 1 row -->
+    <div class="card grid-item grid-item-1x1">
+        <a href="#3" class="card-link">
+            <img src="https://assetsiwetec.b-cdn.net/eShop/Kernsortiment.png" style="max-width: 120px;">
+            <h4 style="color: rgb(138, 196, 223);">Zubehör | Kernsortiment</h4>
+        </a>
+    </div>
+    
+    <!-- Card 7: 1 column, 1 row -->
+    <div class="card grid-item grid-item-1x2">
+        <a href="" class="card-link">
+            <img src="https://assetsiwetec.b-cdn.net/eShop/Arbeitsleuchte.png" style="max-width: 120px;">
+            <h4 style="color: rgb(138, 196, 223);">Arbeitsleuchten</h4>
+        </a>
+    </div>
+    
+    <!-- Card 8: 1 column, 2 rows -->
+    <div class="card grid-item grid-item-2x1">
+        <a href="" class="card-link">
+            <img src="https://assetsiwetec.b-cdn.net/eShop/Gambit.png" style="max-width: 120px;">
+            <h4 style="color: rgb(138, 196, 223);">Gambit Beleuchtung</h4>
+        </a>
+    </div>
+    
+    <!-- Card 9: 1 column, 1 row -->
+    <div class="card grid-item">
+        <a href="" class="card-link">
+            <img src="https://assetsiwetec.b-cdn.net/eShop/Planning.png" style="max-width: 120px;">
+        <h4 style="color: rgb(138, 196, 223);">Lichtplanung</h4>
+        </a>   
+    </div>
+  </div>
+
+ 
+  
+  
+  
+
+    
+    
+    
+    
+
+<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js" integrity="sha384-YvpcrYf0tY3lHB60NNkmXc5s9fDVZLESaAA55NDzOxhy9GkcIdslK1eN7N6jIeHz" crossorigin="anonymous"></script>
+</html>
