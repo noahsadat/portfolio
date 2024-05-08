@@ -1,6 +1,6 @@
 const templates = {
 card1: `<div class="card" style="width: 18rem;">
-<img src="..." class="card-img-top" alt="...">
+<img src="/files/placeholder.jpg" class="card-img-top" alt="...">
 <div class="card-body">
   <h5 class="card-title">Card title</h5>
   <p class="card-text">Some quick example text to build on the card title and make up the bulk of the card's content.</p>
@@ -8,6 +8,14 @@ card1: `<div class="card" style="width: 18rem;">
 </div>
 </div>`,
 card2: `<div class="card" style="width: 18rem;">
+<img src="/files/placeholder.jpg" class="card-img-top" alt="...">
+<div class="card-body">
+  <h5 class="card-title">Card title</h5>
+  <p class="card-text">Some quick example text to build on the card title and make up the bulk of the card's content.</p>
+  <a href="#" class="btn btn-primary">Go somewhere</a>
+</div>
+</div>`,
+card3: `<div class="card" style="width: 18rem;">
 <div class="card-body">
   <h5 class="card-title">Card title</h5>
   <h6 class="card-subtitle mb-2 text-body-secondary">Card subtitle</h6>
@@ -16,14 +24,41 @@ card2: `<div class="card" style="width: 18rem;">
   <a href="#" class="card-link">Another link</a>
 </div>
 </div>`,
-card3: `<div class="card" style="width: 18rem;">
-<img src="..." class="card-img-top" alt="...">
+card4: `<div class="card" style="width: 18rem;">
+<img src="/files/placeholder.jpg" class="card-img-top" alt="...">
 <div class="card-body">
   <p class="card-text">Some quick example text to build on the card title and make up the bulk of the card's content.</p>
 </div>
 </div>`,
-card4: `<div class="card" style="width: 18rem;">
-<img src="..." class="card-img-top" alt="...">
+card5: `<div class="card" style="width: 18rem;">
+<ul class="list-group list-group-flush">
+  <li class="list-group-item">An item</li>
+  <li class="list-group-item">A second item</li>
+  <li class="list-group-item">A third item</li>
+</ul>
+</div>`,
+card6: `<div class="card" style="width: 18rem;">
+<div class="card-header">
+  Featured
+</div>
+<ul class="list-group list-group-flush">
+  <li class="list-group-item">An item</li>
+  <li class="list-group-item">A second item</li>
+  <li class="list-group-item">A third item</li>
+</ul>
+</div>`,
+card7: `<div class="card" style="width: 18rem;">
+<ul class="list-group list-group-flush">
+  <li class="list-group-item">An item</li>
+  <li class="list-group-item">A second item</li>
+  <li class="list-group-item">A third item</li>
+</ul>
+<div class="card-footer">
+  Card footer
+</div>
+</div>`,
+card8: `<div class="card" style="width: 18rem;">
+<img src="/files/placeholder.jpg" class="card-img-top" alt="...">
 <div class="card-body">
   <h5 class="card-title">Card title</h5>
   <p class="card-text">Some quick example text to build on the card title and make up the bulk of the card's content.</p>
@@ -38,7 +73,7 @@ card4: `<div class="card" style="width: 18rem;">
   <a href="#" class="card-link">Another link</a>
 </div>
 </div>`,
-card5: `<div class="card">
+card9: `<div class="card">
 <div class="card-header">
   Featured
 </div>
@@ -48,7 +83,7 @@ card5: `<div class="card">
   <a href="#" class="btn btn-primary">Go somewhere</a>
 </div>
 </div>`,
-card6: `<div class="card">
+card10: `<div class="card">
 <div class="card-header">
   Quote
 </div>
@@ -59,7 +94,7 @@ card6: `<div class="card">
   </blockquote>
 </div>
 </div>`,
-card7: `<div class="card text-center">
+card11: `<div class="card text-center">
 <div class="card-header">
   Featured
 </div>
@@ -72,27 +107,7 @@ card7: `<div class="card text-center">
   2 days ago
 </div>
 </div>`,
-card8: `<div class="row">
-<div class="col-sm-6 mb-3 mb-sm-0">
-  <div class="card">
-    <div class="card-body">
-      <h5 class="card-title">Special title treatment</h5>
-      <p class="card-text">With supporting text below as a natural lead-in to additional content.</p>
-      <a href="#" class="btn btn-primary">Go somewhere</a>
-    </div>
-  </div>
-</div>
-<div class="col-sm-6">
-  <div class="card">
-    <div class="card-body">
-      <h5 class="card-title">Special title treatment</h5>
-      <p class="card-text">With supporting text below as a natural lead-in to additional content.</p>
-      <a href="#" class="btn btn-primary">Go somewhere</a>
-    </div>
-  </div>
-</div>
-</div>`,
-card9: `<div class="card text-center">
+card12: `<div class="card text-center">
 <div class="card-header">
   <ul class="nav nav-tabs card-header-tabs">
     <li class="nav-item">
@@ -112,7 +127,7 @@ card9: `<div class="card text-center">
   <a href="#" class="btn btn-primary">Go somewhere</a>
 </div>
 </div>`,
-card10: `<div class="card text-center">
+card13: `<div class="card text-center">
 <div class="card-header">
   <ul class="nav nav-pills card-header-pills">
     <li class="nav-item">
@@ -132,10 +147,26 @@ card10: `<div class="card text-center">
   <a href="#" class="btn btn-primary">Go somewhere</a>
 </div>
 </div>`,
-card11: `<div class="card mb-3" style="max-width: 540px;">
+card14: `<div class="card" style="width: 18rem;">
+<img src="/files/placeholder.jpg" class="card-img-top" alt="...">
+<div class="card-body">
+  <h5 class="card-title">Card title</h5>
+  <p class="card-text">This is a wider card with supporting text below as a natural lead-in to additional content. This content is a little bit longer.</p>
+  <p class="card-text"><small class="text-body-secondary">Last updated 3 mins ago</small></p>
+</div>
+</div>`,
+card15: `<div class="card" style="width: 18rem;">
+<div class="card-body">
+  <h5 class="card-title">Card title</h5>
+  <p class="card-text">This is a wider card with supporting text below as a natural lead-in to additional content. This content is a little bit longer.</p>
+  <p class="card-text"><small class="text-body-secondary">Last updated 3 mins ago</small></p>
+</div>
+<img src="/files/placeholder.jpg" class="card-img-bottom" alt="...">
+</div>`,
+card16: `<div class="card" style="max-width: 540px;">
 <div class="row g-0">
   <div class="col-md-4">
-    <img src="..." class="img-fluid rounded-start" alt="...">
+    <img src="/files/placeholder.jpg" class="img-fluid rounded-start" alt="...">
   </div>
   <div class="col-md-8">
     <div class="card-body">
@@ -146,20 +177,22 @@ card11: `<div class="card mb-3" style="max-width: 540px;">
   </div>
 </div>
 </div>`,
-card12: `<div class="card text-bg-primary mb-3" style="max-width: 18rem;">
+card17: `<div class="card text-bg-primary" style="max-width: 18rem;">
 <div class="card-header">Header</div>
 <div class="card-body">
   <h5 class="card-title">Primary card title</h5>
   <p class="card-text">Some quick example text to build on the card title and make up the bulk of the card's content.</p>
 </div>
 </div>`,
-card13: `<div class="card border-primary mb-3" style="max-width: 18rem;">
+card18: `<div class="card border-primary" style="max-width: 18rem;">
 <div class="card-header">Header</div>
 <div class="card-body text-primary">
   <h5 class="card-title">Primary card title</h5>
   <p class="card-text">Some quick example text to build on the card title and make up the bulk of the card's content.</p>
 </div>
 </div>`,
+
+
 
 
 };
