@@ -11,9 +11,6 @@
     padding: 8px;
     cursor: pointer;
 }
-.number-selector span:hover {
-    background-color: #e9ecef;
-}
 
 .crafting-area {
     border: 1px solid #ffffff; /* Light border for visibility */
