@@ -74,6 +74,28 @@ window.onload = createStars;
                 loop: true
             });
         });
+
+        document.addEventListener("DOMContentLoaded", function() {
+          new Typed('#builder-title', {
+              strings: [
+                  "Build",
+                  "Create",
+                  "Design",
+                  "Craft",
+                  "Develop",
+                  "Form",
+                  "Compose",
+                  "Construct",
+                  "Generate"
+              ],
+              typeSpeed: 75,
+              backSpeed: 70,
+              startDelay: 200,
+              backDelay: 500,
+              cursorChar: '|',
+              loop: true
+          });
+      });
         
         document.addEventListener('DOMContentLoaded', () => {
             const observer = new IntersectionObserver((entries) => {

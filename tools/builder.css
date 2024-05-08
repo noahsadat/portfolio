@@ -26,3 +26,14 @@
     background-color: #000; /* Background color */
     color: white; /* Text color for contrast */
 }
+
+
+.icon-toggle-button {
+    color: #fff;
+    z-index: 10; /* Keep the button above other content */
+}
+
+.icon-toggle-button .icon {
+    width: 20%; /* Set a fixed width for the icon */
+    height: auto; /* Maintain aspect ratio */
+}

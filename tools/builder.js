@@ -56,3 +56,31 @@ document.addEventListener('DOMContentLoaded', function () {
     setupComponentButton('show-buttons', buttons);
 });
 
+document.addEventListener('DOMContentLoaded', function () {
+    const iconToggleButton = document.querySelector('.icon-toggle-button');
+    iconToggleButton.addEventListener('click', function () {
+        const contentArea = document.querySelector('.crafting-area'); // Selector for the crafting area
+        const contentToCopy = contentArea.innerHTML; // Get the inner HTML of the crafting area
+
+        navigator.clipboard.writeText(contentToCopy)
+            .then(() => {
+                // Visual feedback or changes upon successful copy
+                const iconImage = this.querySelector('img');
+                iconImage.src = '/files/copied.svg'; // Change to "copied" icon
+                iconImage.alt = 'Copied'; // Update alt text
+
+                // Optionally revert the icon back after a delay
+                setTimeout(() => {
+                    iconImage.src = '/files/copy.svg';
+                    iconImage.alt = 'Copy';
+                }, 2000); // Revert back after 2 seconds
+            })
+            .catch(err => {
+                console.error('Failed to copy contents:', err);
+                // Handle error (e.g., display an error message or log to console)
+            });
+    });
+});
+
+
+

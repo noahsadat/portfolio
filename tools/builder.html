@@ -15,10 +15,10 @@
   <div class="container sticky-top">
     <header class="d-flex justify-content-between align-items-center p-3 mb-5">
         <div class="me-auto">
-            <span class="h5" style="color: #8d8d8d;">Noah Sadat</span>
+            <span class="h5" style="color: #8d8d8d;" id="builder-title"></span>
         </div>
         <div>
-            <a class="btn btn-outline-light m-2" href="#portfolio">Portfolio</a>
+            <a class="btn btn-outline-light m-2" href="/index.html">Portfolio</a>
             <a class="nav-item dropdown">
               <a class="btn btn-outline-secondary btnstyle m-2" href="#" data-bs-toggle="dropdown" aria-expanded="false">Contact</a>
               <ul class="dropdown-menu">
@@ -32,26 +32,34 @@
     </header>
   </div>
 
-  <div class="container-fluid d-flex justify-content-center align-items-center" style="height: 70vh;">
+
+<div class="container-fluid d-flex justify-content-center align-items-center" style="height: 70vh;">
     <div class="crafting-area bg-dark text-white d-flex justify-content-center align-items-center" style="width: 70%; height: 100%;">
         <!-- Crafting area is initially empty -->
     </div>
 </div>
 
-<div class="container p-3">
+<div class="container p-3" style="width: 70%;">
     <div class="row">
-        <div class="col-12">
-            <div class="number-selector text-center mt-3" style="display: none;" p-1></div>
-            <div class="d-flex flex-wrap justify-content-around">
-                <button class="btn btn-secondary m-2 btnstyle" type="button" id="show-cards" style="max-width:50%;">Cards</button>
-                <button class="btn btn-secondary m-2 btnstyle" type="button" id="show-heros">Hero Sections</button>
-                <button class="btn btn-secondary m-2 btnstyle" type="button" id="show-features">Features</button>
-                <button class="btn btn-secondary m-2 btnstyle" type="button" id="show-jumbotrons">Jumbotrons</button>
-                <button class="btn btn-secondary m-2 btnstyle" type="button" id="show-buttons">Buttons</button>
+        <div class="col-12 text-center"> <!-- Ensure the column is centered -->
+            <div class="btn-group d-flex justify-content-center" role="group" aria-label="Component Buttons">
+                <button class="btn btn-outline-secondary" type="button" id="show-cards" style="max-width:50%;">Cards</button>
+                <button class="btn btn-outline-secondary" type="button" id="show-heros">Hero Sections</button>
+                <button class="btn btn-outline-secondary" type="button" id="show-features">Features</button>
+                <button class="btn btn-outline-secondary" type="button" id="show-jumbotrons">Jumbotrons</button>
+                <button class="btn btn-outline-secondary" type="button" id="show-buttons">Buttons</button>
+                <button class="icon-toggle-button btn btn-outline-secondary">
+                    <img src="/files/copy.svg" alt="Copy" class="icon"> <!-- Initial SVG icon -->
+                </button>
             </div>
+
+            <div class="number-selector text-center m-1" style="display: none;"></div>
+            <!-- Button group with Bootstrap classes to handle the grouping and centering -->
         </div>
     </div>
 </div>
+
+
 
 
 
