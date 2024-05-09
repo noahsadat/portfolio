@@ -4,6 +4,9 @@ import jumbotrons from '../templates/jumbotrons.js';
 import heros from '../templates/heros.js';
 import features from '../templates/features.js';
 import buttons from '../templates/buttons.js';
+import dropdowns from '../templates/dropdowns.js';
+import lists from '../templates/lists.js';
+import modals from '../templates/modals.js';
 
 // Global variable to keep the last clicked template for persistence across events
 let lastClickedTemplate = '';
@@ -54,6 +57,9 @@ document.addEventListener('DOMContentLoaded', function () {
     setupComponentButton('show-heros', heros);
     setupComponentButton('show-features', features);
     setupComponentButton('show-buttons', buttons);
+    setupComponentButton('show-dropdowns', dropdowns);
+    setupComponentButton('show-lists', lists);
+    setupComponentButton('show-modals', modals);
 });
 
 document.addEventListener('DOMContentLoaded', function () {
