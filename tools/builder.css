@@ -34,6 +34,26 @@
 }
 
 .icon-toggle-button .icon {
-    width: 20%; /* Set a fixed width for the icon */
+    width: 1rem; /* Set a fixed width for the icon */
     height: auto; /* Maintain aspect ratio */
+}
+
+
+/* Initial state: both builders are not displayed by default */
+#smallbuilder, #bigbuilder {
+    display: none;
+}
+
+/* Small screens: display block for smallbuilder */
+@media (max-width: 767px) {
+    #smallbuilder {
+        display: block;
+    }
+}
+
+/* Medium and large screens: display block for bigbuilder */
+@media (min-width: 768px) {
+    #bigbuilder {
+        display: block;
+    }
 }

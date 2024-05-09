@@ -32,34 +32,47 @@
     </header>
   </div>
 
+<div id="smallbuilder">
+    <div class="px-5 py-5 my-5 text-center">
+        <h1 >Please visit this page in a bigger screen.<br><a href="/tools/tools.html" class="btnstyle">Tools</a><a href="/tools/components.html" class="btnstyle"> | Components</a><a href="/tools/builder.html" class="btnstyle"> | Builder</a></h1>
 
-<div class="container-fluid d-flex justify-content-center align-items-center" style="height: 70vh;">
-    <div class="crafting-area bg-dark text-white d-flex justify-content-center align-items-center" style="width: 70%; height: 100%;">
-        <!-- Crafting area is initially empty -->
+        <div class="col-lg-6 mx-auto">
+          <div class="d-grid gap-2 d-sm-flex justify-content-sm-center" id="portfolio">
+          </div>
+        </div>
     </div>
 </div>
 
-<div class="container p-3" style="width: 70%;">
-    <div class="row">
-        <div class="col-12 text-center"> <!-- Ensure the column is centered -->
-            <div class="btn-group d-flex justify-content-center" role="group" aria-label="Component Buttons">
-                <button class="btn btn-outline-secondary" type="button" id="show-cards" style="max-width:50%;">Cards</button>
-                <button class="btn btn-outline-secondary" type="button" id="show-heros">Hero Sections</button>
-                <button class="btn btn-outline-secondary" type="button" id="show-features">Features</button>
-                <button class="btn btn-outline-secondary" type="button" id="show-jumbotrons">Jumbotrons</button>
-                <button class="btn btn-outline-secondary" type="button" id="show-buttons">Buttons</button>
-                <button class="btn btn-outline-secondary" type="button" id="show-dropdowns">Dropdowns</button>
-                <button class="btn btn-outline-secondary" type="button" id="show-lists">Lists</button>
-                <button class="btn btn-outline-secondary" type="button" id="show-modals">Modals</button>
-                <button class="icon-toggle-button btn btn-outline-secondary">
-                    <img src="/files/copy.svg" alt="Copy" class="icon"> <!-- Initial SVG icon -->
-                </button>
-            </div>
-
-            <div class="number-selector text-center m-1" style="display: none;"></div>
-            <!-- Button group with Bootstrap classes to handle the grouping and centering -->
+<div id="bigbuilder">
+    <div class="container-fluid d-flex justify-content-center align-items-center" style="height: 70vh;">
+        <div class="crafting-area bg-dark text-white d-flex justify-content-center align-items-center" style="width: 70%; height: 100%;">
+            <!-- Crafting area is initially empty -->
         </div>
     </div>
+    
+    <div class="container p-3" style="width: 70%;">
+        <div class="row">
+            <div class="col-12 text-center"> <!-- Ensure the column is centered -->
+                <div class="btn-group d-flex justify-content-center" role="group" aria-label="Component Buttons">
+                    <button class="btn btn-outline-secondary" type="button" id="show-cards" style="max-width:50%;">Cards</button>
+                    <button class="btn btn-outline-secondary" type="button" id="show-heros">Hero Sections</button>
+                    <button class="btn btn-outline-secondary" type="button" id="show-features">Features</button>
+                    <button class="btn btn-outline-secondary" type="button" id="show-jumbotrons">Jumbotrons</button>
+                    <button class="btn btn-outline-secondary" type="button" id="show-buttons">Buttons</button>
+                    <button class="btn btn-outline-secondary" type="button" id="show-dropdowns">Dropdowns</button>
+                    <button class="btn btn-outline-secondary" type="button" id="show-lists">Lists</button>
+                    <button class="btn btn-outline-secondary" type="button" id="show-modals">Modals</button>
+                    <button class="icon-toggle-button btn btn-outline-secondary">
+                        <img src="/files/copy.svg" alt="Copy" class="icon"> <!-- Initial SVG icon -->
+                    </button>
+                </div>
+    
+                <div class="number-selector text-center m-1" style="display: none;"></div>
+                <!-- Button group with Bootstrap classes to handle the grouping and centering -->
+            </div>
+        </div>
+    </div>
+    
 </div>
 
 
@@ -69,7 +82,7 @@
 
     <div class="animated-break-line my-5"></div>
 
-    <footer>
+    <footer class="">
         <p class="text-center p-3" style="color: #8d8d8d;">© Noah Sadat. All rights reserved.</p>
     </footer>
     

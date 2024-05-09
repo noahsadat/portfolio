@@ -9,6 +9,7 @@ html, body {
   height: 100%; /* might need to be min-height: 100% depending on content */
 }
 
+
 .star {
   position: absolute;
   background: white;
