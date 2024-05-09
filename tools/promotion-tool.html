@@ -378,34 +378,34 @@ document.getElementById('deDescription').addEventListener('change', function() {
     
 
     <div class="alert alert-success">
-        <strong>Deutsch:</strong><br> Promotion title: ${deTitle}<br>
+        <strong>German:</strong><br> Promotion title: ${deTitle}<br>
         Description: ${deDescription}<br>
         Campaign period: Diese Aktion ist gültig vom ${startDate} bis zum ${endDate}<br>
         Aktionsregeln: ${combinabilityTextDe}${exclusionTextDe}
     </div>
     <div class="alert alert-success">
-        <strong>Französisch:</strong><br> Promotion title: ${frTitle}<br>
+        <strong>French:</strong><br> Promotion title: ${frTitle}<br>
         Description: ${frDescription}<br>
         Campaign period: Promotion valable du ${startDate} au ${endDate}<br>
-        Aktionsregeln: ${combinabilityTextFr}${exclusionTextFr}
+        Règles de promotion: ${combinabilityTextFr}${exclusionTextFr}
     </div>
     <div class="alert alert-success">
-        <strong>Niederländisch:</strong><br> Promotion title: ${nlTitle}<br>
+        <strong>Dutch:</strong><br> Promotion title: ${nlTitle}<br>
         Description: ${nlDescription}<br>
         Campaign period: Actie geldig van ${startDate} tot en met ${endDate}<br>
-        Aktionsregeln: ${combinabilityTextNl}${exclusionTextNl}
+        Promotieregels: ${combinabilityTextNl}${exclusionTextNl}
     </div>
     <div class="alert alert-success">
-        <strong>Englisch:</strong><br> Promotion title: ${enTitle}<br>
+        <strong>English:</strong><br> Promotion title: ${enTitle}<br>
         Description: ${enDescription}<br>
         Campaign period: This promotion is valid from ${startDate} to ${endDate}<br>
-        Aktionsregeln: ${combinabilityTextEn}${exclusionTextEn}
+        Promotion rules: ${combinabilityTextEn}${exclusionTextEn}
     </div>
     <div class="alert alert-success">
-        <strong>Italienisch:</strong><br> Promotion title: ${itTitle}<br>
+        <strong>Italian:</strong><br> Promotion title: ${itTitle}<br>
         Description: ${itDescription}<br>
         Campaign period: Questa promozione è valida da ${startDate} a ${endDate}<br>
-        Aktionsregeln: ${combinabilityTextIt}${exclusionTextIt}
+        Regole della promozione: ${combinabilityTextIt}${exclusionTextIt}
     </div>
     `;
 }
@@ -512,101 +512,8 @@ function downloadXML() {
     let exclusionTextIt = "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Più tasse applicabili. Questa offerta è valida solo per gli articoli selezionati.";
 
 
-    const xmlContent = `<?xml version="1.0" encoding="UTF-8" standalone="yes"?>
-
-<promotion id="${promotionId}">
-<active>true</active>
-<applications>rest</applications>
-<effect-discount-level>false</effect-discount-level>
-<rank>0</rank>
-<start-date>${formattedStartDate.format2}T23:50:00+00:00</start-date>
-<end-date>${formattedEndDate.format2}T22:50:00+00:00</end-date>
-<type-code>0</type-code>
-<creator-id>00001106@COMPANY</creator-id>
-<currency>EUR</currency>
-<combinable>false</combinable>
-<default-rank>true</default-rank>
-<multiple-allowed>false</multiple-allowed>
-<available>true</available>
-<stop-further-promotions>false</stop-further-promotions>
-<budget>
-<budget-id></budget-id>
-<budget-notification-threshold>0.0</budget-notification-threshold>
-<budget-notification-email></budget-notification-email>
-<send-mail-if-budget-reached>false</send-mail-if-budget-reached>
-<send-mail-if-threshold-reached>false</send-mail-if-threshold-reached>
-<disable-by-budget>false</disable-by-budget>
-<unlimited>true</unlimited>
-</budget>
-<promotion-code-definition>
-<promotion-code-required>false</promotion-code-required>
-<single-code></single-code>
-<single-code-total>0</single-code-total>
-<unlimited>true</unlimited>
-<code-customer-unlimited>false</code-customer-unlimited>
-<use-promotion-code-groups>false</use-promotion-code-groups>
-</promotion-code-definition>
-<combination>0</combination>
-<rebates>
-<currency>EUR</currency>
-<type-code>0</type-code>
-<classification-type-code>0</classification-type-code>
-<position>0</position>
-<condition-override-application-exclusion>false</condition-override-application-exclusion>
-<action-override-application-exclusion>false</action-override-application-exclusion>
-</rebates>
-<content>
-<content-activation-type>0</content-activation-type>
-</content>
-<use-campaign-target-group>false</use-campaign-target-group>
-<use-campaign-time-frame>false</use-campaign-time-frame>
-<custom-attributes>
-<custom-attribute name="DisableMessages" ns2:dt="boolean">false</custom-attribute>
-<custom-attribute name="EditedDate" ns2:dt="date">2024-04-18T09:10:44+00:00</custom-attribute>
-<custom-attribute name="LegalContentMessage" ns2:dt="text" xml:lang="de-AT">&lt;p&gt;${combinabilityTextDe}${exclusionTextDe}&lt;/p&gt;</custom-attribute>
-<custom-attribute name="LegalContentMessage" ns2:dt="text" xml:lang="de-DE">&lt;p&gt;${combinabilityTextDe}${exclusionTextDe}&lt;/p&gt;</custom-attribute>
-<custom-attribute name="LegalContentMessage" ns2:dt="text" xml:lang="en-US">&lt;p&gt;${combinabilityTextEn}${exclusionTextEn}&lt;/p&gt;</custom-attribute>
-<custom-attribute name="LegalContentMessage" ns2:dt="text" xml:lang="fr-BE">&lt;p&gt;${combinabilityTextFr}${exclusionTextFr}&lt;/p&gt;</custom-attribute>
-<custom-attribute name="LegalContentMessage" ns2:dt="text" xml:lang="fr-FR">&lt;p&gt;${combinabilityTextFr}${exclusionTextFr}&lt;/p&gt;</custom-attribute>
-<custom-attribute name="LegalContentMessage" ns2:dt="text" xml:lang="it-IT">&lt;p&gt;${combinabilityTextIt}${exclusionTextIt}&lt;/p&gt;</custom-attribute>
-<custom-attribute name="LegalContentMessage" ns2:dt="text" xml:lang="nl-BE">&lt;p&gt;${combinabilityTextNl}${exclusionTextNl}&lt;/p&gt;</custom-attribute>
-<custom-attribute name="LegalContentMessage" ns2:dt="text" xml:lang="nl-NL">&lt;p&gt;${combinabilityTextNl}${exclusionTextNl}&lt;/p&gt;</custom-attribute>
-<custom-attribute name="LongTitle" ns2:dt="text" xml:lang="de-AT">&lt;p&gt;${deDescription}&lt;/p&gt;</custom-attribute>
-<custom-attribute name="LongTitle" ns2:dt="text" xml:lang="de-DE">&lt;p&gt;${deDescription}&lt;/p&gt;</custom-attribute>
-<custom-attribute name="LongTitle" ns2:dt="text" xml:lang="en-US">&lt;p&gt;${enDescription}&lt;/p&gt;</custom-attribute>
-<custom-attribute name="LongTitle" ns2:dt="text" xml:lang="fr-BE">&lt;p&gt;${frDescription}&lt;/p&gt;</custom-attribute>
-<custom-attribute name="LongTitle" ns2:dt="text" xml:lang="fr-FR">&lt;p&gt;${frDescription}&lt;/p&gt;</custom-attribute>
-<custom-attribute name="LongTitle" ns2:dt="text" xml:lang="it-IT">&lt;p&gt;${itDescription}&lt;/p&gt;</custom-attribute>
-<custom-attribute name="LongTitle" ns2:dt="text" xml:lang="nl-BE">&lt;p&gt;${nlDescription}&lt;/p&gt;</custom-attribute>
-<custom-attribute name="LongTitle" ns2:dt="text" xml:lang="nl-NL">&lt;p&gt;${nlDescription}&lt;/p&gt;</custom-attribute>
-<custom-attribute name="RuleDescription" ns2:dt="text" xml:lang="de-AT">&lt;p&gt;Diese Aktion ist gültig vom ${startDate} bis zum ${endDate}&lt;/p&gt;</custom-attribute>
-<custom-attribute name="RuleDescription" ns2:dt="text" xml:lang="de-DE">&lt;p&gt;Diese Aktion ist gültig vom ${startDate} bis zum ${endDate}&lt;/p&gt;</custom-attribute>
-<custom-attribute name="RuleDescription" ns2:dt="text" xml:lang="en-US">&lt;p&gt;This promotion is valid from ${startDate} to ${endDate}&lt;/p&gt;</custom-attribute>
-<custom-attribute name="RuleDescription" ns2:dt="text" xml:lang="fr-BE">&lt;p&gt;Promotion valable du ${formattedStartDate.format1} au ${formattedStartDate.format2}&lt;/p&gt;</custom-attribute>
-<custom-attribute name="RuleDescription" ns2:dt="text" xml:lang="fr-FR">&lt;p&gt;Promotion valable du ${formattedStartDate.format1} au ${formattedStartDate.format2}&lt;/p&gt;</custom-attribute>
-<custom-attribute name="RuleDescription" ns2:dt="text" xml:lang="it-IT">&lt;p&gt;Questa promozione è valida da ${startDate} a ${endDate}&lt;/p&gt;</custom-attribute>
-<custom-attribute name="RuleDescription" ns2:dt="text" xml:lang="nl-BE">&lt;p&gt;Actie geldig van ${formattedStartDate.format1} tot en met ${formattedStartDate.format1}&lt;/p&gt;</custom-attribute>
-<custom-attribute name="RuleDescription" ns2:dt="text" xml:lang="nl-NL">&lt;p&gt;Actie geldig van ${formattedStartDate.format1} tot en met ${formattedStartDate.format1}&lt;/p&gt;</custom-attribute>
-<custom-attribute name="Title" ns2:dt="text" xml:lang="de-AT">&lt;h3&gt;&lt;strong&gt;${deTitle}&lt;/strong&gt;&lt;/h3&gt;</custom-attribute>
-<custom-attribute name="Title" ns2:dt="text" xml:lang="de-DE">&lt;h3&gt;&lt;strong&gt;${deTitle}&lt;/strong&gt;&lt;/h3&gt;</custom-attribute>
-<custom-attribute name="Title" ns2:dt="text" xml:lang="en-US">&lt;h3&gt;&lt;strong&gt;${enTitle}&lt;/strong&gt;&lt;/h3&gt;</custom-attribute>
-<custom-attribute name="Title" ns2:dt="text" xml:lang="fr-BE">&lt;h3&gt;&lt;strong&gt;${frTitle}&lt;/strong&gt;&lt;/h3&gt;</custom-attribute>
-<custom-attribute name="Title" ns2:dt="text" xml:lang="fr-FR">&lt;h3&gt;&lt;strong&gt;${frTitle}&lt;/strong&gt;&lt;/h3&gt;</custom-attribute>
-<custom-attribute name="Title" ns2:dt="text" xml:lang="it-IT">&lt;h3&gt;&lt;strong&gt;${itTitle}&lt;/strong&gt;&lt;/h3&gt;</custom-attribute>
-<custom-attribute name="Title" ns2:dt="text" xml:lang="nl-BE">&lt;h3&gt;&lt;strong&gt;${nlTitle}&lt;/strong&gt;&lt;/h3&gt;</custom-attribute>
-<custom-attribute name="Title" ns2:dt="text" xml:lang="nl-NL">&lt;h3&gt;&lt;strong&gt;${nlTitle}&lt;/strong&gt;&lt;/h3&gt;</custom-attribute>
-<custom-attribute name="UseExternalURL" ns2:dt="boolean" xml:lang="de-AT">false</custom-attribute>
-<custom-attribute name="UseExternalURL" ns2:dt="boolean" xml:lang="de-DE">false</custom-attribute>
-<custom-attribute name="UseExternalURL" ns2:dt="boolean" xml:lang="en-US">false</custom-attribute>
-<custom-attribute name="UseExternalURL" ns2:dt="boolean" xml:lang="fr-BE">false</custom-attribute>
-<custom-attribute name="UseExternalURL" ns2:dt="boolean" xml:lang="fr-FR">false</custom-attribute>
-<custom-attribute name="UseExternalURL" ns2:dt="boolean" xml:lang="it-IT">false</custom-attribute>
-<custom-attribute name="UseExternalURL" ns2:dt="boolean" xml:lang="nl-BE">false</custom-attribute>
-<custom-attribute name="UseExternalURL" ns2:dt="boolean" xml:lang="nl-NL">false</custom-attribute>
-<custom-attribute name="displayName" ns2:dt="string" xml:lang="de-DE">${deTitle}</custom-attribute>
-</custom-attributes>
-</promotion>
-</enfinity>`;
+    const xmlContent = `Example-file
+`;
 
     const blob = new Blob([xmlContent], { type: 'application/xml' });
     const url = URL.createObjectURL(blob);
