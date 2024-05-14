@@ -92,3 +92,60 @@ document.addEventListener('DOMContentLoaded', function () {
 
 
 
+document.addEventListener('DOMContentLoaded', function () {
+    const twoColRowButton = document.getElementById('2colrow');
+    const threeColRowButton = document.getElementById('3colrow');
+    const fourColRowButton = document.getElementById('4colrow');
+    const craftingArea = document.querySelector('.crafting-area');
+    
+    let currentLayout = null; // Variable to store the current layout
+
+    twoColRowButton.addEventListener('click', function() {
+        if (currentLayout === 2) return; // Check if the layout is already applied
+        updateCraftingLayout(2);
+        currentLayout = 2; // Update the current layout state
+    });
+
+    threeColRowButton.addEventListener('click', function() {
+        if (currentLayout === 3) return; // Check if the layout is already applied
+        updateCraftingLayout(3);
+        currentLayout = 3; // Update the current layout state
+    });
+
+    fourColRowButton.addEventListener('click', function() {
+        if (currentLayout === 4) return; // Check if the layout is already applied
+        updateCraftingLayout(4);
+        currentLayout = 4; // Update the current layout state
+    });
+
+    function updateCraftingLayout(columns) {
+        let currentContent = craftingArea.innerHTML.trim();
+        if (!currentContent) {
+            alert('No content in the crafting area to format!');
+            return;
+        }
+
+        let columnClass = getColumnClass(columns);
+        let newContent = `<div class="container pt-3"><div class="row">`;
+
+        for (let i = 0; i < columns; i++) {
+            newContent += `<div class="${columnClass}">${currentContent}</div>`;
+        }
+
+        newContent += `</div></div>`;
+        craftingArea.innerHTML = newContent;
+    }
+
+    function getColumnClass(columns) {
+        switch (columns) {
+            case 2:
+                return 'col-sm-6 col-md-6';
+            case 3:
+                return 'col-sm-6 col-md-4';
+            case 4:
+                return 'col-sm-6 col-md-3';
+            default:
+                return 'col'; // Default fallback
+        }
+    }
+});

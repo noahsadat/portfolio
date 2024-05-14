@@ -44,8 +44,25 @@
 </div>
 
 <div id="bigbuilder">
+
+    <div class="container p-3" style="width: 70%;">
+        <div class="row">
+            <div class="col-12 text-center"> <!-- Ensure the column is centered -->
+                <div class="container"></div>
+                <div class="btn-group d-flex justify-content-center" role="group" aria-label="Component Buttons">
+                    <button class="btn btn-outline-secondary" type="button" id="2colrow">2-COL/ROW</button>
+                    <button class="btn btn-outline-secondary" type="button" id="3colrow">3-COL/ROW</button>
+                    <button class="btn btn-outline-secondary" type="button" id="4colrow">4-COL/ROW</button>
+                    <button class="icon-toggle-button btn btn-outline-secondary">
+                        <img src="/files/copy.svg" alt="Copy" class="icon"> <!-- Initial SVG icon -->
+                    </button>
+                </div>
+            </div>
+        </div>
+    </div>
+    
     <div class="container-fluid d-flex justify-content-center align-items-center" style="height: 70vh;">
-        <div class="crafting-area bg-dark text-white d-flex justify-content-center align-items-center" style="width: 70%; height: 100%;">
+        <div class="crafting-area bg-dark text-white d-flex justify-content-center align-items-center" style="width: 80%; height: 100%;">
             <!-- Crafting area is initially empty -->
         </div>
     </div>
@@ -53,6 +70,7 @@
     <div class="container p-3" style="width: 70%;">
         <div class="row">
             <div class="col-12 text-center"> <!-- Ensure the column is centered -->
+                <div class="container"></div>
                 <div class="btn-group d-flex justify-content-center" role="group" aria-label="Component Buttons">
                     <button class="btn btn-outline-secondary" type="button" id="show-cards" style="max-width:50%;">Cards</button>
                     <button class="btn btn-outline-secondary" type="button" id="show-heros">Hero Sections</button>
@@ -62,11 +80,8 @@
                     <button class="btn btn-outline-secondary" type="button" id="show-dropdowns">Dropdowns</button>
                     <button class="btn btn-outline-secondary" type="button" id="show-lists">Lists</button>
                     <button class="btn btn-outline-secondary" type="button" id="show-modals">Modals</button>
-                    <button class="btn btn-outline-secondary disabled" type="button" id="show-scrollspies">Scrollspies</button>
-                    <button class="icon-toggle-button btn btn-outline-secondary">
-                        <img src="/files/copy.svg" alt="Copy" class="icon"> <!-- Initial SVG icon -->
-                    </button>
                 </div>
+                
     
                 <div class="number-selector text-center m-1" style="display: none;"></div>
                 <!-- Button group with Bootstrap classes to handle the grouping and centering -->
