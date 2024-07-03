@@ -139,13 +139,13 @@ document.addEventListener('DOMContentLoaded', function () {
     function getColumnClass(columns) {
         switch (columns) {
             case 2:
-                return 'col-sm-6 col-md-6';
+                return 'col-sm-6 col-md-6 p-2';
             case 3:
-                return 'col-sm-6 col-md-4';
+                return 'col-sm-6 col-md-4 p-2';
             case 4:
-                return 'col-sm-6 col-md-3';
+                return 'col-sm-6 col-md-3 p-2';
             default:
-                return 'col'; // Default fallback
+                return 'col p-2'; // Default fallback
         }
     }
 });
