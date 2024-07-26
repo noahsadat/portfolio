@@ -34,42 +34,49 @@
             const reader = new FileReader();
             reader.onload = function(e) {
                 const content = e.target.result;
-                const lines = content.split('\n');
-                const headers = lines[0].split(',');
-                const data = lines.slice(1).map(line => line.split(','));
+                const lines = content.split('\n').filter(line => line.trim() !== '');
+                const headers = lines[0].split(',').map(header => header.trim());
+                const data = lines.slice(1).map(line => line.split(',').map(cell => cell.trim()));
 
                 const { jsPDF } = window.jspdf;
+                const doc = new jsPDF();
                 let pageCount = 0;
 
+                const pageWidth = doc.internal.pageSize.width;
+                const pageHeight = doc.internal.pageSize.height;
+                const margin = 20;
+                const lineHeight = 7;
+
+                doc.setFontSize(10);
+
                 for (let i = 0; i < data.length; i += 4) {
-                    const doc = new jsPDF();
-                    pageCount++;
+                    if (i > 0 && i % 4 === 0) {
+                        doc.addPage();
+                    }
+                    pageCount = Math.ceil((i + 1) / 4);
 
-                    const startY = 20;
-                    const lineHeight = 10;
-                    const pageWidth = doc.internal.pageSize.width;
-                    const margin = 10;
+                    const usableHeight = pageHeight - 2 * margin;
+                    const sectionHeight = usableHeight / 4.5;  // Slightly less spread out
+                    const spaceBetween = usableHeight / 18;  // Space between sections
 
-                    doc.setFontSize(12);
-
-                    for (let j = 0; j < 4; j++) {
-                        const y = startY + j * (lineHeight * 5); // 4 lines of text + 1 line of space
-                        if (i + j < data.length) {
-                            for (let k = 0; k < 4 && k < headers.length; k++) {
-                                const text = `${headers[k]}: ${data[i + j][k]}`;
-                                doc.text(text, margin, y + k * lineHeight);
-                            }
+                    for (let j = 0; j < 4 && i + j < data.length; j++) {
+                        const startY = margin + j * (sectionHeight + spaceBetween);
+                        for (let k = 0; k < headers.length; k++) {
+                            const text = `${headers[k]}: ${data[i + j][k] || ''}`;
+                            doc.text(text, margin, startY + k * lineHeight);
+                        }
+                        
+                        // Add a line between parts
+                        if (j < 3 && i + j + 1 < data.length) {
+                            doc.setDrawColor(200);  // Light gray
+                            const lineY = startY + sectionHeight + spaceBetween / 2;
+                            doc.line(margin, lineY, pageWidth - margin, lineY);
                         }
                     }
-
-                    // Add a border around the content
-                    const endY = startY + 4 * (lineHeight * 5) - lineHeight;
-                    doc.rect(margin - 5, startY - 10, pageWidth - 2 * margin + 10, endY - startY + 20);
-
-                    doc.save(`Tile_${pageCount}.pdf`);
                 }
 
-                document.getElementById('output').innerHTML = `Generated ${pageCount} PDF file(s).`;
+                doc.save('Tiles.pdf');
+                document.getElementById('output').innerHTML = `Generated 1 PDF file with ${pageCount} page(s).`;
             };
             reader.readAsText(file);
         }
